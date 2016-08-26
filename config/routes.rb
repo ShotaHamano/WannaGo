@@ -61,6 +61,7 @@ Rails.application.routes.draw do
   get 'wannago/register' => 'wanna_go#register'
   get 'wannago/detail/:pic_id' => 'wanna_go#detail'
   get 'home/more_read' => 'home#more_read'
+  get 'login' => 'login#login'
   
   
   
@@ -69,4 +70,5 @@ Rails.application.routes.draw do
   get 'ajax/register' => 'ajax#register' 
   get 'hamano/index' => 'hamano#index'
   get 'hamano/more_read' => 'hamano#more_read'
+  get 'plan/hamanoproposal' => 'plan#hamanoproposal'
 end

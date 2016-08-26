@@ -1,0 +1,3773 @@
+@charset "utf-8";
+/* hotel page last updated on 2016.06.30 by dhayashi */
+
+/* common */
+
+body{
+    width: auto!important;
+}
+
+form{
+    clear: both;
+}
+
+img{
+    border: none;
+}
+
+hr.indicate{
+    display: none;
+}
+
+/*pagetop*/
+p#RthPagetop{
+    /*clear: both;*/
+    float: right;
+    width: auto;
+    margin: 0 0 10px 0;
+    padding: 0 5px 0 0;
+    text-align: right;
+    font-size: 82%;
+    white-space: nowrap;
+    display: inline;
+}
+p#RthPagetop a{
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+}
+p#RthPagetop a:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02.gif);}
+p#RthPagetop a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02_visited.gif);}
+p#RthPagetop a:visited:hover,
+p#RthPagetop a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02_hover.gif);}
+p#RthPagetop a:visited:active,
+p#RthPagetop a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02_active.gif);}
+
+p.RthChainLink{
+    clear: both;
+    float: left;
+    width: auto;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 5px;
+    text-align: left;
+    font-size: 82%;
+    white-space: nowrap;
+    display: inline;
+}
+p.RthChainLink a{
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+}
+p.RthChainLink a:link      { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03.gif);}
+p.RthChainLink a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_visited.gif);}
+p.RthChainLink a:visited:hover,
+p.RthChainLink a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_hover.gif);}
+p.RthChainLink a:visited:active,
+p.RthChainLink a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_active.gif);}
+
+p#RthHelp{
+    float: left;
+    width: 450px;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 5px;
+    text-align: left;
+    font-size: 82%;
+    display: inline;
+}
+p#RthHelp a{
+    padding-left: 13px;
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+}
+p#RthHelp a:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01.gif);}
+p#RthHelp a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_visited.gif);}
+p#RthHelp a:visited:hover,
+p#RthHelp a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_hover.gif);}
+p#RthHelp a:visited:active,
+p#RthHelp a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_active.gif);}
+
+
+/*link color*/
+a:link       { color : #5454f6;}
+a:visited    { color : #632088;}
+a:visited:hover,
+a:link:hover { color : #1D54A7;}
+a:visited:active,
+a:link:active{ color : #bf0000;}
+
+/*clearfix*/
+div#grpSimpleHeader:after,
+div#RthSignArea:after,
+div#RthNameArea:after,
+div#RthForeignName:after,
+div.RthMenuArea dl.RthPageMenu dd ul:after,
+div#RthMenuArea:after,
+div#detailArea dl#hotelPhotos dd:after,
+div.hotelInfo:after,
+div.hotelNote ul:after,
+dl#squeezeArea:after,
+dl#shuffleArea:after,
+div.planArea:after,
+div.planArea div.planDetail:after,
+div.planArea ul.roomTxt li:after,
+div.planArea dl.roomArea dd.roomDetail:after,
+div.planArea div.roomPrice ul:after,
+div.roomtypeArea dl.roomArea dd.roomDetail:after,
+div#moreplanArea dl#moreplanList:after,
+div#moreplanArea dd.moreplanRoomDetail ul:after,
+div.RthPresentArea:after,
+div#petArea:after,
+div#onsenArea:after,
+dl.photoArea dd ul:after,
+ul#RthExcursionArea:after{
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    content: ".";
+    font-size: 0.1em;
+}
+
+div#grpSimpleHeader,
+div#RthSignArea,
+div#hotelnameArea,
+div#RthForeignName,
+div.RthMenuArea dl.RthPageMenu dd ul,
+div#RthMenuArea,
+div#detailArea dl#hotelPhotos dd,
+div.hotelInfo,
+div.hotelNote ul,
+dl#squeezeArea,
+dl#shuffleArea,
+div.planArea,
+div.planArea div.planDetail,
+div.planArea ul.roomTxt li,
+div.planArea dl.roomArea dd.roomDetail,
+div.planArea div.roomPrice ul,
+div.roomtypeArea dl.roomArea dd.roomDetail,
+div#moreplanArea dl#moreplanList,
+div#moreplanArea dd.moreplanRoomDetail ul,
+div.RthPresentArea,
+div#petArea,
+div#onsenArea,
+dl.photoArea dd ul,
+ul#RthExcursionArea{
+    display: inline-block;
+}
+
+
+
+/*heightline.js邵ｺ・ｮsafari陝・ｽｾ鬩包ｽｲ郢晢ｽｻ/
+.RthLineClear{ clear: left;}
+
+/*dt髫補悪・ｴ?邵ｺ・ｮ闕ｳ讎雁ｺ・囎髢蝟ｧ*/
+div#grpSimpleHeader dl#headerMenu dt,
+div#RthForeignName dl#RthForeignNote dt.RthForeignNoteTitle,
+div.RthMenuArea dl.RthPageMenu dt,
+div#RthMenuArea dl#RthReserveMenu dt,
+dl#RthSubMenu dt,
+div#detailArea dl#hotelPhotos dt,
+div.planArea dl.planPhotos dt,
+div.RthPresentArea dl.RthPresentPhotos dt{
+    position:absolute;
+    overflow:hidden;
+    width:0;
+    height:0;
+}
+
+/*--------------------------------------------
+ThickBox
+--------------------------------------------*/
+.thickbox {
+    visibility: hidden;
+}
+
+
+
+/* ---- */
+
+body{
+    background-color: #FFF!important;
+}
+
+#htlContents{
+    margin-left: 20px;
+    min-width: 1220px;
+    position: relative;
+    z-index: 1;
+    /*overflow: hidden;*/
+}
+
+#htlBrdCrmbs{
+    font-size: 80%;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    text-align: left!important;
+    width: 82%;
+}
+
+#htlBrdCrmbs h1{
+    display: inline;
+    font-size: 100%!important;
+}
+
+/*
+260#htlBrdCrmbs h1{
+display: inline;
+}
+*/
+
+/*
+For overseas hotels
+*/
+div.ovrsHtl #htlBrdCrmbs{
+    font-size: 73%;
+}
+div.ovrsHtl #htlBrdCrmbs h1{
+    font-weight: normal;
+}
+
+.languageArea{
+    float: right;
+    margin-top: 13px;
+    padding-right: 5px;
+    display: inline;
+}
+
+.languageArea p{
+    display: inline;
+    padding: 0 5px;
+    border-left: 1px solid #CCC;
+    font-size: 80%;
+}
+
+.languageArea p.frst{
+    border: none;
+}
+
+#htlHeader{
+    width: 1214px;
+    margin: 10px 0 20px 0;
+    background-color: #FFF;
+}
+
+#htlHeader a,
+#htlHeader a:visited{
+    color: #1D54A7;
+}
+
+#htlHeader a:hover,
+#htlHeader a:active{
+    color: #C00;
+}
+
+#htlHeader p#htlNtvNm{
+    overflow: hidden;
+    width: 100%;
+}
+
+#htlHeader h2{
+    font-size: 140%;
+    padding: 0 0 10xp 0;
+    line-height: 150%;
+    font-weight: bold;
+    color: #333;
+}
+
+/*
+For overseas hotels
+*/
+#htlHeader span.engName{
+    display: block;
+    font-size: smaller;
+    line-height: 115%;
+    float:left;
+}
+
+#htlHeader dl.htlGrade {
+    float:left;
+}
+
+#htlHeader dl.htlGrade dt{
+    color:#76AE25;
+    float: left;
+    font-size: 67%;
+    border: 1px solid #76AE25;
+    border-radius: 3px;
+    line-height: 132%;
+    padding: 1px 2px 0px 2px;
+    margin: 2px 0 0 15px;
+}
+#htlHeader dl.htlGrade dd{
+    background: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif) no-repeat;
+    height: 14px;
+    display:inline-block;
+    float: left;
+    width: 90px;
+    text-indent: -9999px;
+    margin-top: 3px;
+}
+
+#htlHeader dl.htlGrade dd.fiveStars  {
+    background-position: -195px -1117px;
+}
+#htlHeader dl.htlGrade dd.fourStars {
+    background-position: -195px -1156px;
+}
+#htlHeader dl.htlGrade dd.threeStars {
+    background-position: -195px -1196px;
+}
+#htlHeader dl.htlGrade dd.twoStars {
+    background-position: -195px -1236px;
+}
+#htlHeader dl.htlGrade dd.oneStar {
+    background-position: -195px -1276px;
+}
+#htlHeader dl.htlGrade dd{
+    background-position: -195px -1316px;
+}
+
+#htlHeader h1.prmHtl{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -670px -320px;
+    padding-left: 22px;
+}
+
+div#htlHeader div#RthNameArea h2{
+    text-align: left!important;
+    font-size: 24px!important;
+    height: auto!important;
+    background: none!important;
+    width: 80%!important;
+}
+
+div#htlHeader div#RthNameArea h2.prmHtl{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif)!important;
+    background-repeat: no-repeat!important;
+    background-position: -670px -320px!important;
+    padding-left: 22px!important;
+    width: inherit!important;
+    font-family: inherit!important;
+    text-align: left!important;
+    zoom: 1;
+}
+
+#htlHeader h2 span.ovrsHtlLogo{
+    display: block;
+}
+
+#htlHeader p#htlNtvNm span{
+    display: inline-block;
+    padding-right: 5px;
+    vertical-align: bottom;
+}
+
+#htlHeader ul{
+    overflow: hidden;
+    font-size: 80%;
+    margin: 10px 0;
+}
+
+#htlHeader ul li{
+    display: inline;
+    margin-right: 10px;
+}
+
+
+
+#htlHeader ul li#htlRnk span,
+#htlHeader ul li#ovrsHtlRnk span{
+    width: 100px;
+    height: 20px;
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+    display:inline;
+}
+
+#htlHeader ul li#htlRnk span.avrgNum{text-indent: 0; width: 35px;}
+
+#htlHeader ul li#htlRnk{
+    background-image: none!important;
+}
+
+#htlHeader ul li#htlRnk strong{
+    font-size: 130%;
+    padding-left: 5px;
+    color: #C00;
+}
+
+#htlHeader ul li#ovrsHtlRnk strong{
+    font-size: 130%;
+    margin-right: 5px;
+    color: #FFF;
+    float: left;
+    background-color: #B3CC14;
+    padding: 3px;
+    display: inline;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.fiveStars{
+    background-position: -201px -578px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.fourHalfStars{
+    background-position: -201px -603px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.fourStars{
+    background-position: -201px -628px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.threeHalfStars{
+    background-position: -201px -653px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.threeStars{
+    background-position: -201px -678px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.twoHalfStars{
+    background-position: -201px -703px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.twoStars{
+    background-position: -201px -728px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.oneHalfStars{
+    background-position: -201px -753px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.oneStars{
+    background-position: -201px -778px;
+}
+
+div.dmstcHtl #htlHeader ul li#htlRnk span.halfStars{
+    background-position: -201px -803px;
+}
+
+/* ovrs */
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.fiveStars{
+    background-position: -400px -578px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.fourHalfStars{
+    background-position: -400px -602px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.fourStars{
+    background-position: -400px -627px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.threeHalfStars{
+    background-position: -400px -652px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.threeStars{
+    background-position: -400px -677px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.twoHalfStars{
+    background-position: -400px -701px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.twoStars{
+    background-position: -400px -727px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.oneHalfStars{
+    background-position: -400px -752px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.oneStars{
+    background-position: -400px -777px;
+}
+
+div.dmstcHtl #htlHeader ul li#ovrsHtlRnk span.halfStars{
+    background-position: -400px -802px;
+}
+
+#htlHeader ul li{
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background-color:transparent;
+    /*-moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    border:1px solid #CCC;*/
+    display:inline;
+    color:#5454F6;
+    font-family:arial;
+    font-size:90%;
+    /*font-weight:bold;*/
+    padding:5px 5px 5px 28px;
+    text-decoration:none;
+    /*text-shadow:1px 1px 0px #ffffff;*/
+    position: relative;
+    float: left;
+    display: inline;
+}
+
+#htlHeader ul li a{
+    outline: none;
+}
+
+#htlHeader ul li{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+}
+
+#htlHeader ul li#htlCoupon{
+    display: none;
+}
+
+#htlHeader ul li{
+    background-position: -664px -1103px;
+}
+
+/*
+#htlHeader ul li#htlPrsnt{
+background-position: -664px -1177px;
+display: none;
+}
+
+#htlHeader ul li#htlCoupon{
+background-position: -664px -1140px;
+}*/
+
+#htlHeader ul li#RthSubFavorite{
+    background-position: -664px -497px;
+}
+
+#htlHeader ul li#htlMilMag{
+    background-position: -664px -467px;
+}
+
+#htlHeader ul li#htlToRcmmnd{
+    background-position: -664px -527px;
+}
+
+#htlHeader ul li#htlKnjFnc{
+    background-position: -671px -1004px;
+}
+
+#htlHeader ul li#htlSNS{
+    display: inline;
+    padding: 0px;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+#htlHeader ul li#htlSNS div{
+}
+
+#htlSide-A{
+    clear: both;
+    width: 220px;
+    float: left;
+    /*height: 1000px;*/
+    margin-bottom: 21px;
+    position: relative;
+    text-align: left!important;
+    display: inline;
+    z-index: 999;
+    color: #333!important;
+}
+
+#htlSide-A a,
+#htlSide-A a:visited{
+    color: #1D54A7;
+}
+
+#htlSide-A a:hover,
+#htlSide-A a:active{
+    color: #C00;
+}
+
+#htlHeader ul li#htlRnk{
+    border: none;
+    padding: 0;
+}
+
+#htlSide-A ul#mainNav{
+    width: 210px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border: 2px solid #CCC;
+}
+
+#htlSide-A ul#mainNav li:first-of-type{
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright:4px;
+    -moz-border-radius-bottomleft:0px;
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    -webkit-border-bottom-left-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+}
+
+#htlSide-A ul#mainNav li:last-of-type{
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright:0px;
+    -moz-border-radius-bottomleft:4px;
+    -moz-border-radius-bottomright:4px;
+    -webkit-border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -webkit-border-bottom-left-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+
+#htlSide-A ul#mainNav li{
+    background-color: #F1F1F1;
+    border-bottom: 1px solid #CCC;
+    /*cursor: pointer;*/
+    font-size: 80%;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#htlSide-A ul#mainNav li a,
+#htlSide-A ul#mainNav li span{
+    color: #333;
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -670px -48px;
+    padding-left: 16px;
+    display: block;
+}
+
+/*
+#htlSide-A ul#mainNav li a.accdn{
+background-position: -670px -688px;
+}
+*/
+
+
+#htlSide-A ul#mainNav li a:hover{
+    text-decoration: none;
+}
+
+#htlSide-A ul#mainNav li.navLast{
+    border: none;
+}
+
+#htlSide-A ul#mainNav li ul.subItm{
+    margin: 8px 0;
+    font-size: 120%;
+    border: 1px solid #CCC;
+    display: none;
+}
+
+#htlSide-A ul#mainNav li ul.subItm li{
+    border: none;
+    background: none;
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;;
+    font-weight: normal;
+}
+
+#htlSide-A ul#mainNav li ul.subItm li.lst{
+    border-bottom: none;
+}
+
+#htlMainContent{
+    width: 950px;
+    float: left;
+    margin-left: 20px;
+    display: inline;
+    _position: relative;
+}
+
+#htlRmSrch,
+#maplctn,
+#recent,
+#relatedPg,
+#nrrwDwn,
+#othrLangLnk{
+    font-size: 80%;
+    width: 210px;
+    margin-bottom: 15px;
+}
+
+#recent{
+    position: relative;
+}
+
+#htlRmSrch{
+    /*margin-top: 30px;*/
+}
+
+#htlRmSrch .ttlBar,
+#maplctn .ttlBar,
+#recent .ttlBar,
+#relatedPg .ttleBar,
+#recent h1,
+#nrrwDwn .ttlBar,
+#othrLangLnk .ttlBar{
+    text-align: center;
+    font-size: 120%;
+    padding: 5px;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #73AB23;
+    background: -moz-linear-gradient(top, #73AB23, #457F0F);
+    background: -o-linear-gradient(top, #73AB23, #457F0F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#73AB23), to(#457F0F));
+    background: #73AB23 url(http://img.travel.rakuten.co.jp/share/themes/top/images/n/top_sprite.png) repeat-x 0 -1600px\9;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright:4px;
+    -moz-border-radius-bottomleft:0px;
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    -webkit-border-bottom-left-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    width: auto!important;
+    margin: 0;
+}
+
+#htlRmSrch .outerBox,
+#maplctn .outerBox,
+#recent .outerBox,
+#relatedPg .outerBox,
+#nrrwDwn .outerBox,
+#othrLangLnk .outerBox{
+    padding: 5px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright:0px;
+    -moz-border-radius-bottomleft:4px;
+    -moz-border-radius-bottomright:4px;
+    -webkit-border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -webkit-border-bottom-left-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    border-left: 2px solid #76AE25;
+    border-right: 2px solid #76AE25;
+    border-bottom: 2px solid #76AE25;
+    background-color: #FFF;
+    margin-left: 0!important;
+}
+
+
+#htlRmSrch dd #srcSwtch
+{
+    padding-left: 5px;
+    /*border-bottom: 1px dotted #CCC;*/
+    list-style: none!important;
+    display: block!important;
+    color: #333!important;
+    margin: 0;
+}
+
+#htlRmSrch dd #srcSwtch li{
+    margin-bottom: 10px;
+    display: block!important;
+}
+
+#htlRmSrch dd #srcSwtch li input{
+    vertical-align: -3px;
+}
+
+#htlRmSrch dd #srcSwtch li label{
+    padding-left: 5px;
+}
+
+#htlRmSrch dd #srcSwtch li#anaSwtch label,
+#htlRmSrch dd #srcSwtch li#jalSwtch label{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    padding-left: 42px;
+}
+
+#htlRmSrch dd #srcSwtch li#anaSwtch label{
+    background-position: -440px -316px;
+    color: #333!important;
+}
+
+#htlRmSrch dd #srcSwtch li#jalSwtch label{
+    background-position: -440px -338px;
+}
+
+#dmstcSrchBox,
+#ovrsSrchBox,
+#nrrwDwn dd.outerBox{
+    overflow: hidden;
+    /*padding-top: 10px;*/
+}
+
+#dmstcSrchBox dl dt,
+#ovrsSrchBox dl dt,
+#nrrwDwn dd.outerBox dl dt{
+    margin-bottom: 5px;
+    background-color: #E4F5CD;
+    padding: 3px;
+    color: #333!important;
+}
+
+#dateInptBox{
+    border: 1px solid #CCC;
+    padding: 3px;
+    margin-bottom: 8px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#dateInptBox #undatedTxt{
+    display: none;
+}
+
+#nrrwDwn dd.outerBox dl dd ul li{
+    margin-bottom: 5px;
+}
+
+#dmstcSrchBox dl dd,
+#ovrsSrchBox dl dd,
+#nrrwDwn dd.outerBox dl dd{
+    margin-bottom: 10px;
+    margin-left: 0!important;
+    color: #333!important;
+}
+
+#dmstcSrchBox form dl dd dl.dpDateInput{
+    overflow: hidden;
+}
+
+#dmstcSrchBox form dl dd dl.dpDateInput dt{
+    background-color: #FFF;
+    padding: 0;
+    float: left;
+    width: 20%;
+    line-height: 180%;
+    display: inline;
+}
+
+#dmstcSrchBox dl dd dl.dpHtl dt {
+    float: left;
+    width: 38%;
+    background-color: white;
+    padding: 0;
+}
+
+#dmstcSrchBox dl dd dl.dpHtl dt span {
+    font-size: 72%;
+}
+
+#dmstcSrchBox dl dd dl.dpHtl dd p.setChldNum {
+    margin-top: 5px;
+    float: none;
+    display: inline;
+    margin-left: 5px;
+}
+
+form#oap-search-form ul#srcOapNumber li.child{
+    line-height:2;
+}
+
+form#dh-search-form.ignore-history dl#rooms.conditionChange dd#room1 a.chldNum,
+form#dh-search-form dl#rooms dd a.chldNum,
+form#oh-search-form.ignore-history dl#rooms.conditionChange dd#room1 a.chldNum,
+form#oh-search-form dl#rooms dd a.chldNum,
+form#oap-search-form ul#srcOapNumber li.child a.oap-child-popup,
+form#dap-search-form dl dd dl#dprooms.dpHtl dd p.setChldNum a#dpChldNum.chldNum,
+form#du-search-form dl#duDtAndRms dd a#duChldNum.chldNum,
+div#dmstcSrchBox dl dd dl#dprooms.dpHtl dd p.setChldNum a#dpChldNum.dap-child-popup{
+    border: 1px solid #CCC;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    padding: 2px 5px;
+    background-color: #FFC;
+}
+
+dl.dpDateInput dd input,
+dl.dpDateInput dd select,
+dl#duDtAndRms dd.prcBox select{
+    margin-bottom: 5px;
+}
+
+div#dpSrchBox dl dd dl.dpHtl dd ul {
+    line-height: 150%;
+    float: right;
+    width: 170px;
+}
+
+div#dmstcSrchBox form .prcBox{
+    line-height: 180%;
+}
+
+div#dpSrchBox form dl dd dl.dpDateInput dd{
+    line-height: 180%;
+    float: right;
+    width: 80%;
+}
+
+div#dmstcSrchBox form dl dd p{
+    border: none;
+}
+
+#dmstcSrchBox form dl dd dl.dpHtl dd ul li{
+    margin-bottom: 5px;
+}
+
+.hasDatepicker {
+    background-color: #FFFFCC;
+    background-image: url("http://img.travel.rakuten.co.jp/share/themes/top/images/icon_calendar.gif");
+    background-position: 162px center;
+    background-repeat: no-repeat;
+    border: 1px solid #7F9DB9;
+    cursor: pointer;
+    padding: 3px;
+    /*position: relative;*/
+    width: 174px;
+    z-index: 1;
+}
+
+dl#dateInptBox dd input.disabled,
+dl#duDtAndRms dd input.disabled{
+    background-color: #EAEAEA !important;
+    color: #999;
+}
+
+#dmstcSrchBox dl dd p a,
+#ovrsSrchBox dl dd p a{
+    color: #5454F6;
+    font-size: 110%;
+    text-decoration: underline;
+}
+
+#dmstcSrchBox dl dd p a.numChngBtn,
+#ovrsSrchBox dl dd p a.numChngBtn{
+    font-size: 80%;
+    border: 1px solid #CCC;
+    background-color: #EAEAEA;
+    padding: 3px 4px;
+    color: #333;
+    text-decoration: none;
+    border:solid 1px #cccccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#dmstcSrchBox dl dd p a.numChngBtn:link,
+#ovrsSrchBox dl dd p a.numChngBtn:link{
+    color: #333;
+}
+
+#dmstcSrchBox dl dd p,
+#ovrsSrchBox dl dd p{
+    line-height: 180%;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted #CCC;
+    padding-bottom: 3px;
+}
+
+#ovrsSrchBox dl dd p{
+    padding-bottom: 8px;
+}
+
+#dmstcSrchBox dl dd p a:visited,
+#ovrsSrchBox dl dd p a:visited{
+    color: #5454F6;
+}
+
+#dmstcSrchBox p.sbmtBtn,
+#ovrsSrchBox p.sbmtBtn,
+#nrrwDwn p.sbmtBtn{
+    text-align: center;
+    clear: both;
+    float: right;
+}
+
+#dmstcSrchBox p.sbmtBtn img,
+#ovrsSrchBox p.sbmtBtn img,
+#nrrwDwn p.sbmtBtn img{
+    border: none!important;
+}
+
+#nrrwDwn dd.outerBox dd.focusMore p a{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/ds/images/new_srch_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -335px -1106px;
+    padding-left: 16px;
+}
+
+#dmstcSrchBox dl dd p.setChldNum{
+    float: right;
+    border-bottom: none;
+}
+
+ul#duChldNumBox{
+    clear: both;
+    overflow: hidden;
+}
+
+ul#duChldNumBox li{
+    float: left;
+    line-height: 150%;
+    margin-bottom: 5px;
+}
+
+ul#duChldNumBox li span{
+    margin-right: 5px;
+}
+/*縺雁ｮ｢讒倥・螢ｰ*/
+.left_voice{
+    width: 210px;
+    box-sizing:border-box;
+    margin-top: 0;
+    margin-left: 0!important;
+    margin-bottom:15px;
+    font-size: 80%;
+    line-height: 1.3em;
+    -moz-border-radius: 4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    border-radius:4px;
+    border: 2px solid #76AE25;
+    background-color: #FFF;
+}
+.left_voice dl{
+    position:relative;
+}
+.left_voice .ttlBar{
+    width: 210px;
+    box-sizing:border-box;
+    padding: 5px;
+    position:absolute;
+    top:-2px;
+    left:-2px;
+    z-index:1;
+    text-align: center;
+    font-size: 120%;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #73AB23;
+    background: -moz-linear-gradient(top, #73AB23, #457F0F);
+    background: -o-linear-gradient(top, #73AB23, #457F0F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#73AB23), to(#457F0F));
+    background: #73AB23 url(http://img.travel.rakuten.co.jp/share/themes/top/images/n/top_sprite.png) repeat-x 0 -1600px\9;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright:4px;
+    -moz-border-radius-bottomleft:0px;
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    -webkit-border-bottom-left-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    margin: 0;
+}
+.left_voice dl dd{
+    margin-left:5px;
+    margin-right:5px;
+}
+.left_voice dl .txt{
+    padding-top:2.5em;
+    word-break:break-all;
+}
+.left_voice .date{
+    margin-top: 5px;
+    font-size: 85%;
+    color:#999;
+    line-height: 1.0;
+}
+.left_voice .more{
+    font-size: 82%;
+    margin: 5px;
+    text-align: right;
+}
+/* --- */
+
+/* Hotel Info Page Last update 2011.04.18 */
+
+hr.indicate{
+    display: none;
+}
+
+/*pagetop*/
+p#RthPagetop{
+    /*clear: both;*/
+    float: right;
+    width: auto;
+    margin: 0 0 10px 0;
+    padding: 0 5px 0 0;
+    text-align: right;
+    font-size: 82%;
+    white-space: nowrap;
+    display: inline;
+}
+p#RthPagetop a{
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+}
+p#RthPagetop a:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02.gif);}
+p#RthPagetop a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02_visited.gif);}
+p#RthPagetop a:visited:hover,
+p#RthPagetop a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02_hover.gif);}
+p#RthPagetop a:visited:active,
+p#RthPagetop a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow02_active.gif);}
+
+p.RthChainLink{
+    clear: both;
+    float: left;
+    width: auto;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 5px;
+    text-align: left;
+    font-size: 82%;
+    white-space: nowrap;
+    display: inline;
+}
+p.RthChainLink a{
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+}
+p.RthChainLink a:link      { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03.gif);}
+p.RthChainLink a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_visited.gif);}
+p.RthChainLink a:visited:hover,
+p.RthChainLink a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_hover.gif);}
+p.RthChainLink a:visited:active,
+p.RthChainLink a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_active.gif);}
+
+p#RthHelp{
+    float: left;
+    width: 450px;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 5px;
+    text-align: left;
+    font-size: 82%;
+    display: inline;
+}
+p#RthHelp a{
+    padding-left: 13px;
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+}
+p#RthHelp a:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01.gif);}
+p#RthHelp a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_visited.gif);}
+p#RthHelp a:visited:hover,
+p#RthHelp a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_hover.gif);}
+p#RthHelp a:visited:active,
+p#RthHelp a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_active.gif);}
+
+
+/*link color*/
+a:link       { color : #5454f6;}
+a:visited    { color : #632088;}
+a:visited:hover,
+a:link:hover { color : #1D54A7;}
+a:visited:active,
+a:link:active{ color : #bf0000;}
+
+/*clearfix*/
+div#grpSimpleHeader:after,
+div#RthSignArea:after,
+div#RthNameArea:after,
+div#RthForeignName:after,
+div.RthMenuArea dl.RthPageMenu dd ul:after,
+div#RthMenuArea:after,
+div#detailArea dl#hotelPhotos dd:after,
+div.hotelInfo:after,
+div.hotelNote ul:after,
+dl#squeezeArea:after,
+dl#shuffleArea:after,
+div.planArea:after,
+div.planArea div.planDetail:after,
+div.planArea ul.roomTxt li:after,
+div.planArea dl.roomArea dd.roomDetail:after,
+div.planArea div.roomPrice ul:after,
+div.roomtypeArea dl.roomArea dd.roomDetail:after,
+div#moreplanArea dl#moreplanList:after,
+div#moreplanArea dd.moreplanRoomDetail ul:after,
+div.RthPresentArea:after,
+div#petArea:after,
+div#onsenArea:after,
+dl.photoArea dd ul:after,
+ul#RthExcursionArea:after{
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    content: ".";
+    font-size: 0.1em;
+}
+
+div#grpSimpleHeader,
+div#RthSignArea,
+div#hotelnameArea,
+div#RthForeignName,
+div.RthMenuArea dl.RthPageMenu dd ul,
+div#RthMenuArea,
+div#detailArea dl#hotelPhotos dd,
+div.hotelInfo,
+div.hotelNote ul,
+dl#squeezeArea,
+dl#shuffleArea,
+div.planArea,
+div.planArea div.planDetail,
+div.planArea ul.roomTxt li,
+div.planArea dl.roomArea dd.roomDetail,
+div.planArea div.roomPrice ul,
+div.roomtypeArea dl.roomArea dd.roomDetail,
+div#moreplanArea dl#moreplanList,
+div#moreplanArea dd.moreplanRoomDetail ul,
+div.RthPresentArea,
+div#petArea,
+div#onsenArea,
+dl.photoArea dd ul,
+ul#RthExcursionArea{
+    display: inline-block;
+}
+
+
+
+/*heightline.js邵ｺ・ｮsafari陝・ｽｾ鬩包ｽｲ郢晢ｽｻ/
+.RthLineClear{ clear: left;}
+
+/*dt髫補悪・ｴ?邵ｺ・ｮ闕ｳ讎雁ｺ・囎髢蝟ｧ*/
+div#grpSimpleHeader dl#headerMenu dt,
+div#RthForeignName dl#RthForeignNote dt.RthForeignNoteTitle,
+div.RthMenuArea dl.RthPageMenu dt,
+div#RthMenuArea dl#RthReserveMenu dt,
+dl#RthSubMenu dt,
+div#detailArea dl#hotelPhotos dt,
+div.planArea dl.planPhotos dt,
+div.RthPresentArea dl.RthPresentPhotos dt{
+    position:absolute;
+    overflow:hidden;
+    width:0;
+    height:0;
+}
+
+/*--------------------------------------------
+ThickBox
+--------------------------------------------*/
+.thickbox {
+    visibility: hidden;
+}
+
+
+/*--------------------------------------------
+Header History
+--------------------------------------------
+div#naviTop div#grpHeaderSecondary { padding: 0 0 2px; width: 950px; }
+p#historyCount { display: inline-block; float: right; clear: none; }
+div#naviTop div#grpHeaderSecondary p#grplocationArea { vertical-align: middle; }
+*/
+
+/*--------------------------------------------
+Header Navi
+--------------------------------------------*/
+div#naviTop div#grpHeaderSecondary{
+    width: 950px;
+    padding: 0 0 3px;
+    /*overflow: hidden;*/
+}
+div#naviTop div#grpHeaderSecondary p#grplocationArea{
+    margin: 0;
+    padding: 5px 0 0;
+    width: 950px;
+}
+div#naviTop div#grpHeaderSecondary p.grpHelp{
+    float: right;
+    margin: 0;
+    padding: 0;
+    font-size: 82%;
+    text-align: right;
+}
+div#naviTop div#grpHeaderSecondary p.grpHelp a{
+    padding-left: 12px;
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+}
+div#naviTop div#grpHeaderSecondary:after {/*for modern browser*/
+    display: block;
+    clear:both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    content: ".";
+    font-size: 0.1em;
+}
+div#naviTop div#grpHeaderSecondary {
+    display: inline-block;
+}
+
+div#naviTop p a:link       { color : #6F6F6F;}
+div#naviTop p a:visited    { color : #6F6F6F;}
+div#naviTop p a:visited:hover,
+div#naviTop p a:link:hover { color : #1D54A7;}
+div#naviTop p a:visited:active,
+div#naviTop p a:link:active{ color : #bf0000;}
+
+div#naviTop #historyCount a:link { color: #5454F6; }
+div#naviTop #historyCount a:visited    { color : #6F6F6F;}
+div#naviTop #historyCount a:visited:hover,
+div#naviTop #historyCount a:link:hover { color : #1D54A7;}
+div#naviTop #historyCount a:visited:active,
+div#naviTop #historyCount a:link:active{ color : #bf0000;}
+
+/* --- */
+
+ul#RthExcursionArea{
+    padding-top: 12px;
+    width: 99%!important;
+}
+
+/* --- */
+
+div#grpfooterArea {
+    border-top: 1px solid #000000;
+    clear: both;
+    margin: 0.5em 0 10px;
+    padding: 5px;
+    width: 99%!important;
+}
+
+div#grpfooterArea dl#grpSupportMenu {
+    float: left;
+    font-size: 82%;
+    margin: 0.2em 0 5px;
+    padding: 0;
+    display: inline;
+}
+
+div#grpfooterArea dl#grpSupportMenu dt {
+    height: 0;
+    left: -9999px;
+    position: absolute;
+    width: 100px;
+}
+
+div#grpfooterArea dl#grpSupportMenu dd {
+    margin: 0 0 0 0.3em;
+}
+
+div#grpfooterArea dl#grpSupportMenu dd ul li {
+    border-right: 1px solid #ADADAD;
+    float: left;
+    line-height: 1.1;
+    list-style-type: none;
+    margin: 0 0.3em 0 0;
+    padding: 0 0.3em 0 0;
+}
+
+div#grpfooterArea p#grpCopyright {
+    float: right;
+    font-size: 78%;
+    margin: 0.3em 1em 5px 0;
+    padding: 0;
+}
+
+div#grpfooterArea p#grp10th {
+    clear: both;
+    text-align: right;
+    margin-right: 1em;
+}
+
+/* tab navigtion */
+
+div#htlContents div#htlSide-A div{
+    /*display: none;*/
+}
+
+/* main area */
+
+div#htlCntntArea{
+    /*padding: 8px; */
+    margin-left: -20px;
+    -margin-left: 0px;
+    width: 100%;
+}
+
+div#htlCntntArea.RthDomestic,div#htlCntntArea.RthOverseas{
+    margin-left: 0;
+}
+div#htlCntntArea p#leadTxt{
+    color: #333;
+    font-size: 82%;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: 0em;
+    padding: 8px 0;
+    width: 950px;
+}
+dl#phtDtlPg{
+    overflow: hidden;
+    margin: 13px 0;
+}
+
+dl#phtDtlPg img{
+    padding: 3px;
+    border: 1px solid #CCC;
+    background-color: #FFF;
+}
+
+dl#phtDtlPg dt{
+    float: left;
+    width: 454px;
+}
+
+dl#phtDtlPg dt img{
+    margin-right: 8px;
+}
+
+dl#phtDtlPg dd{
+    float: left;
+    width: 492px;
+}
+
+p.toPhtGrly{
+    text-align: right;
+    clear: both;
+    font-size: 80%;
+    margin-bottom: 13px;
+    display: none; /*20130520*/
+}
+
+p.toPhtGrly a{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -670px -47px;
+    padding-left: 12px;
+    margin-right: 50px;
+}
+
+dl#phtDtlPg dd ul li{
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    display: inline;
+}
+
+dl#phtDtlPg dd ul li a{
+    cursor: default;
+}
+
+dd ul#phtLst li span{
+    position: absolute;
+    z-index: 3;
+    display: block;
+    width: 210px;
+    height: 210px;
+    background-color: #FFF;
+    display: none;
+}
+
+3dd ul#phtLst li span img{
+    background-color: #FFF;
+    border: none;
+    border: 3px solid #CCC;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.dtlTblTtl{
+    font-size: 90%;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #EAEAEA!important;
+    padding: 5px 8px;
+    color: #333;
+}
+
+ul.dtlTbl{
+    margin-bottom: 21px;
+}
+
+ul.dtlTbl li{
+    padding: 10px 8px;
+    border-bottom: 1px dotted #CCC;
+    color: #333;
+}
+
+ul.dtlTbl li.lstItm{
+    border: none;
+}
+
+ul.dtlTbl li dl{
+    overflow: hidden;
+    font-size: 90%;
+    letter-spacing: 0.12em;
+    line-height: 150%;
+    width: 100%;
+}
+
+ul.dtlTbl li dl dt{
+    float: left;
+    width: 15%;
+    font-weight: bold;
+}
+
+ul.dtlTbl li dl dd{
+    float: right;
+    width: 82%;
+}
+
+ul.dtlTbl li dl dd.eqHghtLnk a{
+    display: block;
+    float: left;
+    width: 31%;
+    padding-right: 8px;
+    display: inline;
+}
+
+ul.dtlTbl li dl dd ul li{
+    display: inline;
+    padding: 0 34px 0 0;
+    /*white-space: nowrap;*/
+    line-height: 180%;
+    border: none;
+}
+
+ul.dtlTbl li dl dd ul.eqHght{
+    width: 100%;
+    overflow: hidden;
+}
+
+ul.dtlTbl li dl dd ul.eqHght li{
+    display: block;
+    padding: 0;
+    float: left;
+    /*width: 31%;*/
+    width: 48%;
+    padding-right: 8px;
+}
+
+ul.dtlTbl li dl dd.lnBrk ul li,
+ul.dtlTbl li dl dd.lnBrk span{
+    display: block;
+    white-space: normal;
+    padding-right: 0;
+}
+
+ul.dtlTbl li dl dd.toMbl{
+}
+
+ul.dtlTbl .toMbl img{
+    display: block;
+    margin: 0 0 8px 12px;
+    border: 1px solid #CCC;
+}
+
+ul.dtlTbl .toMbl a{
+    background-color: #999;
+    color: #FFF;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+ul.dtlTbl .toMbl a:hover{
+
+}
+
+div#onsenArea p#onsenLead {
+    color: #437617;
+    font-size: 90%;
+    font-weight: bold;
+    margin: 8px 6px 5px 5px;
+}
+
+/*
+div#onsenArea p#onsenTxt,
+div#petArea p#petTxt{
+font-size: 80%;
+line-height: 150%;
+padding: 5px;
+display: inline;
+}
+*/
+
+div#petArea ul#petPhotos,
+
+div#onsenArea ul#onsenPhotos {
+    margin: 0 0 5px;
+    margin-bottom: 12px;
+    padding: 0 6px 0 0;
+}
+
+div#petArea ul#petPhotos li,
+div#onsenArea ul#onsenPhotos li {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 6px;
+    padding: 5px;
+    text-align: center;
+    visibility: hidden;
+    width: 210px;
+}
+
+div.hotelNote{
+    clear: both;
+}
+
+div.hotelNote ul.dtlTbl{
+    width: 100%;
+}
+
+ul.dtlTbl li dl dd ul li.noSrv{
+    text-decoration:line-through;
+    color: #999;
+}
+
+/* access */
+
+div#mapArea div.mapUser {
+    border: 1px solid #E9E9E9;
+    margin: 50px auto 20px;
+    padding: 1px;
+    text-align: center;
+    width: 750px;
+}
+
+div#mapArea div.routemapArea {
+    margin: 0 auto;
+    width: 748px;
+}
+
+div#mapArea div font{
+    display: block;
+    text-align: center;
+}
+
+div#mapArea div.routemapArea p.info {
+    font-size: 82%;
+    padding-bottom: 10px;
+    text-align: right;
+}
+
+div#mapArea div.routemapArea dl.nearStation {
+    background: none repeat scroll 0 0 #70A230;
+    overflow: hidden;
+    width: 748px;
+}
+
+div#mapArea div.routemapArea dl.nearStation dt {
+    background: url("../images/bg_all.jpg") no-repeat scroll 0 7px transparent;
+    color: #FFFFFF;
+    float: left;
+    font-size: 100%;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 38px;
+    padding-top: 10px;
+    display: inline;
+}
+
+div#mapArea div.routemapArea dl.nearStation dd.route {
+    text-align: center;
+    width: 100%;
+    background: #F2F2F2;
+    line-height: 100%;
+    font-size: 94%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    clear: both;
+}
+
+div#htlMainContent div#htlCntntArea div#mapBnr{
+    width: 500px;
+    margin: 24px auto;
+    padding-top: 3px;
+    font-size: 80%;
+    border: 2px solid #F60;
+}
+
+div#mapArea div.routemapArea dl.nearStation dd.changeList {
+    padding-left: 12px;
+    padding-top: 6px;
+    float: left;
+    display: inline;
+}
+
+center.banner table tr td table tr td{
+    font-size: 80%;
+    line-height: 150%;
+}
+
+/* map */
+
+a.mapLftClmn{
+    display: block;
+    width: 99%;
+    height: 120px;
+    border: 1px solid #CCC;
+    overflow: hidden;
+}
+
+a.mapLftClmn img{
+    border: none!important;
+}
+
+/* browsed hotels */
+
+#recent #recTtlNum{
+    padding: 0 0 7px 7px;
+    font-size: 82%;
+    border-left: 2px solid #76AE25;
+    border-right: 2px solid #76AE25;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+    background-color: #FFF;
+    margin: 0;
+}
+
+#recent div.scrllArea{
+    background-color: #FFF;
+}
+
+#recent #recTtlNum strong{
+    color: #C00;
+}
+#recent #recTtlNum span{
+    font-size: 80%;
+}
+
+#recent .scrllArea{
+    border-left: 2px solid #76AE25;
+    border-right: 2px solid #76AE25;
+    border-bottom: 2px solid #76AE25;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+
+#recent .controller li{
+    height: 24px;
+    position: absolute;
+    width: 24px;
+    z-index: 3;
+}
+
+#recent .controller li a{
+    background: url("http://img.travel.rakuten.co.jp/share/themes/top/images/n/top_sprite.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+#recent .controller li.prev a:link,
+#recent .controller li.prev a:visited{
+    background-position: 0 -50px;
+}
+
+#recent .controller li.prev a:hover{
+    background-position: 0 -80px;
+}
+
+#recent .controller li.next a:link,
+#recent .controller li.next a:visited{
+    background-position: -30px -50px;
+}
+
+#recent .controller li.next a:hover{
+    background-position: -30px -80px;
+}
+
+#recent .controller li.prev{
+    top: 100px;
+    left: -12px;
+}
+
+#recent .controller li.next{
+    top: 100px;
+    right: -12px;
+}
+
+#recent .recentList{
+    clear: both;
+    z-index: 1;
+    width: 210px;
+    list-style-type: none;
+}
+
+#recent .recentList:after{
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0.1em;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+ul.recentList li{
+    float: left;
+    position: relative;
+    width: 90px;
+    padding: 9px 5px;
+    font-size: 78%;
+}
+
+ul.recentList li:first-child{
+    border-right: 1px dotted #999999;
+}
+
+ul.recentList li .photo{
+    width: auto;
+    float: none;
+    text-align: center;
+    height: 60px;
+    margin-bottom: 7px;
+}
+
+ul.recentList li a{
+    display: block;
+    cursor: pointer;
+}
+
+ul.recentList li a p.pref{
+    display: none;
+    margin-bottom: 5px;
+}
+
+ul.recentList li a:link p.pref,
+ul.recentList li a:visited p.pref,
+ul.recentList li a:hover p.pref,
+ul.recentList li a:active p.pref{
+    color: #000000;
+}
+
+ul.recentList li a:hover img{
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+ul.recentList li .delete a{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 9px;
+    height: 9px;
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -672px -1316px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+#recent .recentList li a.mDeleteImg{
+    width: 9px;
+    height : 9px;
+}
+
+#recent .more{
+    margin: 5px;
+    text-align: right;
+    font-size: 82%;
+}
+
+/* adjust */
+
+div#sort{
+    margin-top: 5px;
+}
+
+h1#pageTitle{
+    clear: both;
+    margin: 13px 0;
+    padding: 0;
+}
+
+/* clearfix */
+
+.clear {
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0px;
+    font-size: 1px;
+}
+/*clearfix*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-table;
+    min-height: 1%;
+}
+/*Hides from MacIE \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/*Hides from MacIE */
+
+/* child box */
+
+div#dmstcSrchBox form dl dd p{
+    position: relative;
+    _position: static;
+}
+
+div#dmstcSrchBox form dl dd div.childBox{
+    position: absolute;
+    background-color: #FFF;
+    z-index: 120;
+}
+
+/* 陝・揄・ｾ蟶托ｽｺ・ｺ隰ｨ・ｰ鬩包ｽｸ髫ｰ螢ｹ繝ｻ*/
+
+/*------------------------
+
+child Box
+
+------------------------*/
+
+iframe.childBoxBackground {
+    border:0px;
+    left: 0px;
+    top: 0px;
+    width: 425px;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    /*display:none;*/
+}
+div.childBox {
+    font-size: 80%;
+    background-position: -765px -5px;
+    background-repeat: no-repeat;
+    width: 425px;
+    position: absolute;
+    z-index: 999;
+    -webkit-box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.3);
+    /*display:none;*/
+}
+div.childBox table{
+    border:1px solid #E6E6E6;
+    border-spacing: 0px;
+    margin-bottom:2px;
+    width:100%;
+}
+div.childBox table tr{
+    border:1px solid #E6E6E6;
+    padding:3px;
+}
+div.childBox table tr th{
+    background-color: #EFEFEF;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    text-align: center;
+    width: 4em;
+}
+div.childBox table tr td{
+    padding:3px;
+}
+div.childBox table tr td span{
+    display: inline-block;
+    margin-right: 3px;
+    width: 7em;
+}
+p.tbClose a {
+    background-position: -30px -115px;
+    height: 12px;
+    width: 12px;
+    overflow:hidden;
+    text-indent:-9999px;
+    display:block;
+    margin:3px;
+    float:right;
+    display: inline;
+}
+
+div.sltBox {
+    border:4px solid #CCC; /* IE7 and below */
+    background-color:#FFF;
+    /* padding-bottom: 15px;*/
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+
+p.tbClose a {
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -81px -186px;
+    display: block;
+    float: right;
+    height: 12px;
+    margin: 3px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 12px;
+    display: inline;
+}
+
+div.childBox div.sltBox p.chldSetBtn{
+    text-align: center;
+    margin-top: 5px;
+}
+
+#dmstcSrchBox div.childBox div.sltBox p.chldSetBtn a{
+    font-weight: bold;
+    background-color: #E6752B;
+    font-size: 100%;
+    color: #FFF;
+    padding: 5px;
+    text-decoration: none;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+}
+
+/* clearfix */
+
+dl#phtDtlPg dd ul:after,
+div#petArea ul#petPhotos:after,
+div#onsenArea ul#onsenPhotos:after,
+ul.dtlTbl li dl dd ul.eqHght li:after,
+div#onsenArea div.hotelNote ul.dtlTbl li dl dd ul.eqHght:after{
+    display:block;
+    clear:both;} /* 邵ｺ骰具ｽｸ・ｺE髫ｪ蛟ｩ・ｿ・ｰ邵ｺ・ｯ陜暦ｽｺ陞ｳ螢ｹ縲堤ｸｺ繝ｻ*/
+
+dl#phtDtlPg dd ul,
+div#petArea ul#petPhotos,
+div#onsenArea ul#onsenPhotos,
+ul.dtlTbl li dl dd ul.eqHght li,
+div#onsenArea div.hotelNote ul.dtlTbl li dl dd ul.eqHght{
+    zoom:1;
+} /* clearfix IE6, 7 */
+dl#phtDtlPg dd ul:after,
+div#petArea ul#petPhotos:after,
+div#onsenArea ul#onsenPhotos:after,
+ul.dtlTbl li dl dd ul.eqHght li:after,
+div#onsenArea div.hotelNote ul.dtlTbl li dl dd ul.eqHght:after{
+    content:"";
+}
+
+/* 隶諛・ｽｴ・｢隴夲ｽ｡闔会ｽｶ */
+
+#srchCriteria{
+    border: 1px solid #CCC;
+    font-size: 90%;
+    padding: 5px 0 0 0;
+    margin: 8px 0;
+}
+
+#srchCriteria dl{
+    border-bottom: 1px dotted #CCC;
+    padding-bottom: 5px;
+    background-color: #FFF;
+}
+
+#srchCriteria dl dt,
+#srchCriteria dl dd{
+    display: inline;
+}
+
+#srchCriteria dl dt{
+    background-color: #66B822;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px 5px 6px 5px;
+}
+
+#srchCriteria dl dd{
+    margin-left: 13px;
+}
+
+.showAll{
+    display: block;
+    padding: 8px 0 5px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 80%;
+    letter-spacing: 0.2em;
+}
+
+.showAll:hover{
+    background-color: #F1F1F1;
+}
+
+.showAll span{
+    background-image: url("http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif");
+    background-position: -670px -49px;
+    background-repeat: no-repeat;
+    padding-left: 14px;
+}
+
+/* 2013.02.05 */
+
+div#htlMainContent div#voiceArea{
+    _vertical-align: top;
+    _margin-top: 30px;
+}
+
+/* 2013.02.08 */
+
+div#dmstcSrchBox dl#dateInptBox dd .hasDatepicker{
+    _position: static;
+}
+
+div#htlContents div#htlSide-A ul.recentList li a h2{
+    background: none!important;
+    width: none!important;
+    font-family: inherit!important;
+    line-height: inherit!important;
+    color: #1D54A7!important;
+    font-size: inherit!important;
+    border: none!important;
+    width: auto!important;
+    margin-top: 0!important;
+}
+
+/* 2013.02.14 */
+
+p#searchqinForAirPackage.term{
+    line-height: 130%;
+    background: #EAEAEA;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+p#searchExplainForAirPackage.term span{
+    color: #C00;
+}
+
+div#dmstcSrchBox #dap-search-form dl dd dl.dpDateInput dd input.hasDatepicker{
+    width: 140px;
+    background-position: 130px center;
+}
+
+div#dmstcSrchBox #dap-search-form dl dd dl.dpDateInput dd{
+    float: left;
+}
+
+div#rtSiteHeader div.rtCorporate p.rtOutline{
+    text-align: left!important;
+}
+
+#htlSide-A dl#htlRmSrch dd.outerBox div#dmstcSrchBox form#dh-search-form dl#rooms{
+    background: none!important;
+    width: auto!important;
+    height: auto!important;
+    margin: auto!important;
+    padding: auto!important;
+    line-height: inheritf!important;
+    font-size: inherit!important;
+}
+
+/* 2013.02.19 */
+html body#TOP div#rtSiteHeader div ul.rtSiteNav{
+    display: block!important;
+}
+
+div#htlSide-A dd{
+    float: none!important;
+}
+
+/*2013.04.04*/
+
+#relatedPg ul{
+    margin: 0;
+}
+
+#relatedPg ul li,
+#othrLangLnk ul li{
+    line-height: 150%;
+    margin: 5px 0;
+}
+
+#relatedPg ul li a,
+#relatedPg ul li span{
+    padding-left: 15px;
+    background-repeat: no-repeat;
+}
+
+#othrLangLnk ul li a,
+#othrLangLnk ul li span{
+    padding-left: 15px;
+    background-repeat: no-repeat;
+}
+
+#relatedPg ul li span{
+    font-weight: bold;
+    color: #333!important;
+}
+
+#relatedPg ul li a:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01.gif);}
+#relatedPg ul li a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_visited.gif);}
+#relatedPg ul li a:visited:hover, #relatedPg ul li a:link:hover{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_hover.gif);}
+#relatedPg ul li a:visited:active, #relatedPg ul li a:link:active, #relatedPg ul li span{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_active.gif);}
+
+#othrLangLnk ul li a:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01.gif);}
+#othrLangLnk ul li a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_visited.gif);}
+#othrLangLnk ul li a:visited:hover, #othrLangLnk ul li a:link:hover{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_hover.gif);}
+#othrLangLnk ul li a:visited:active, #othrLangLnk ul li a:link:active, #relatedPg ul li span{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_active.gif);}
+
+
+/* 2013.05.14 */
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav{
+    /*border-bottom: 2px solid #68A11E;* 20121219*/
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul{
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0!important;
+    display: block!important;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li{
+    text-align: center;
+    float: left;
+    /*width: 8em;*/
+    margin-left: 8px;
+    list-style: none!important;
+    display: inline;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li a,
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li span{
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    display: block;
+    padding: 8px 8px 5px 8px;
+    color: #333;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li a{
+    border: 1px solid #CCC;
+    border-bottom: none;
+    background-color: #FFF;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li#navLsr{
+    display: none;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li a:hover,
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li span{
+    background-color: #EAEAEA;
+    color: #000;
+    background-color: #EAEAEA;
+    /*background-image: linear-gradient(top, rgb(194,172,153) 46%, rgb(201,190,181) 87%);
+    background-image: -o-linear-gradient(top, rgb(194,172,153) 46%, rgb(201,190,181) 87%);
+    background-image: -moz-linear-gradient(top, rgb(194,172,153) 46%, rgb(201,190,181) 87%);
+    background-image: -webkit-linear-gradient(top, rgb(194,172,153) 46%, rgb(201,190,181) 87%);
+    background-image: -ms-linear-gradient(top, rgb(194,172,153) 46%, rgb(201,190,181) 87%);*/
+    border: 1px solid #EAEAEA;
+    border-bottom: none;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li div{
+    border: 1px solid #CCC;
+    position: absolute;
+    background-color: #FFF;
+    width: 15em;
+    display: none;
+    z-index: 30;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li div ul li{
+    float: left;
+    /*border: none;*/
+    text-align: left;
+    font-size: 90%;
+    width: 100%;
+    border-bottom: 1px dotted #CCC;
+    margin-left: 0;
+    padding: 3px 8px;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li div ul li.itmLst{
+    border: none;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li div ul li a{
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #5454F6;
+    font-weight: normal;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlTabNav ul li div ul li a:hover{
+    background: none;
+    color: #5454F6;
+    border: none;
+}
+
+div#htlMainContent div div#trvlHtlSubNav ul li#rtcond a.rtconds{
+    color: #333;
+    /*font-weight: bold;*/
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlSubNav{
+    text-align: left!important;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlSubNav ul{
+    border-bottom: 1px solid #CCC;
+    padding: 5px 13px;
+    /*margin-bottom: 8px;*/
+    margin: 0 0 8px 0;
+    background-color: #EAEAEA;
+    /*background-image: linear-gradient(top, rgb(255,137,33) 46%, rgb(255,186,130) 87%);
+    background-image: -o-linear-gradient(top, rgb(255,137,33) 46%, rgb(255,186,130) 87%);
+    background-image: -moz-linear-gradient(top, rgb(255,137,33) 46%, rgb(255,186,130) 87%);
+    background-image: -webkit-linear-gradient(top, rgb(255,137,33) 46%, rgb(255,186,130) 87%);
+    background-image: -ms-linear-gradient(top, rgb(255,137,33) 46%, rgb(255,186,130) 87%);*/
+    font-size: 12px;
+    /*-ms-box-shadow: 2px 2px 4px rgb(51, 51, 51);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffffff, endcolorstr=#ffeaeaea, gradienttype=0));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffffff, endcolorstr=#ffeaeaea, gradienttype=0))";*/
+    zoom: 1;
+    display: block!important;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlSubNav ul li{
+    display: inline;
+    line-height: 200%;
+    white-space: nowrap;
+    *white-space: normal;
+    margin-right: 13px;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlSubNav ul li:after{
+    content: '|';
+    padding-left: 13px;
+    color: #CCC;
+}
+
+div#htlContents div#htlMainContent div div#trvlHtlSubNav ul li span{
+    color: #000;
+    font-weight: bold;
+}
+
+.rtUtility a,
+.rtUtility a:visited{
+    color: #1D54A7!important;
+}
+
+.rtUtility a:hover,
+.rtUtility a:active{
+    color: #C00!important;
+}
+
+#rtSiteHeader p{
+    color: #333!important;
+}
+
+div#map_canvas{
+    width: 100%!important;
+    height: 500px!important;
+    margin-bottom: 20px;
+}
+
+/* 20130523 */
+
+.count{
+    text-decoration: none;
+    font-style: normal;
+}
+
+/* 2013.05.28 */
+
+.controller,
+.recentList{
+    margin: 0;
+}
+
+/* 2013.08.02 */
+
+#RthCustomizeW hr{
+    display: block;
+}
+
+/* 2016.2.18 */
+dl dd.outerBox div form dl dd.prcBox select { width: 160px; }
+
+/* BTN */
+
+.stdSrchBtn,
+.stdRsrvBtn,
+.stdClndrBtn{
+    line-height: 100%!important;
+    overflow: hidden;
+}
+
+.roomPrice .stdRsrvBtn a{
+    border: 1px solid #e25b05;
+    background: #e15903;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#F88235, endColorStr=#E15903, GradientType=0);
+    /* for IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F88235, endColorstr=#E15903, GradientType=0)";
+    background: -moz-linear-gradient(top, #f88235 0%, #e15903 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f88235), color-stop(100%, #e15903));
+    background: -webkit-linear-gradient(top, #f88235 0%, #e15903 100%);
+    background: -o-linear-gradient(top, #f88235 0%, #e15903 100%);
+    background: -ms-linear-gradient(top, #f88235 0%, #e15903 100%);
+    background: linear-gradient(to bottom, #f88235 0%, #e15903 100%);
+    border-radius: 5px;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: #ffffff!important;
+}
+
+.stdRsrvBtn a.yoyakulLink,
+.stdSrchBtn a{
+    border: 1px solid #bf0c0b;
+    background: #bd0a0a;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#e0312b, endColorStr=#bd0a0a, GradientType=0);
+    /* for IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e0312b, endColorstr=#bd0a0a, GradientType=0)";
+    background: -moz-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0312b), color-stop(100%, #bd0a0a));
+    background: -webkit-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: -o-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: -ms-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: linear-gradient(to bottom, #e0312b 0%, #bd0a0a 100%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: #ffffff!important;
+}
+
+/* Date Input */
+
+#htlRmSrch .hasDatepicker{
+    width: 176px;
+    padding: 8px 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* small size */
+
+.stdSrchBtn.smlSz a{
+    width: 30%;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* mid size */
+
+.stdSrchBtn.mdSz a{
+    width: 40%;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* lrg size */
+
+.stdSrchBtn.lrgSz a{
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* airline pulldown */
+#oap-airline {
+    max-width: 176px
+}
+
+/* 2013.10.08 */
+ul.wrapSet li{
+    display: block!important;
+}
+
+/* 2014.01.24 */
+
+#htlSNS,
+.iconMail{
+    background: none!important;
+}
+.htlPlnCsst .planThumb{
+    -moz-border-radius: 4px!important;
+    -webkit-border-radius:4px!important;
+    border-radius:4px!important;
+}
+.htlPlnCsst .planThumb .htlPlnInfo{
+    border: 1px solid #77AF27!important;
+    -moz-border-radius-bottom-left: 4px!important;
+    -moz-border-radius-bottom-right:4px!important;
+    -webkit-border-bottom-left-radius:4px!important;
+    -webkit-border-bottom-right-radius:4px!important;
+    border-bottom-left-radius:4px!important;
+    border-bottom-right-radius:4px!important;
+}
+.RthDomestic02 .htlPlnCsst .htlPlnInfo, .RthOverseas02 .htlPlnCsst .htlPlnInfo{
+    border-bottom-left-radius: 4px!important;
+    border-bottom-right-radius: 4px!important;
+}
+#htlCntntArea.RthDomestic02 .planList .htlPlnCsst h4, #htlCntntArea.RthOverseas02 .planList .htlPlnCsst h4{
+    border-top-left-radius: 4px!important;
+    border-top-right-radius: 4px!important;
+    background-color:#72A331;
+    border: 1px solid #77AF27;
+    border-bottom:none;
+    background-image:none;
+}
+
+.htlPlnCsst .planThumb h4{
+    padding: 8px 10px;
+    background-color:#72A331;
+    border: 1px solid #77AF27;
+    border-bottom:none;
+    background-image:none;
+    -moz-border-radius-top-left: 4px!important;
+    -moz-border-radius-top-right:4px!important;
+    -webkit-border-top-left-radius:4px!important;
+    -webkit-border-top-right-radius:4px!important;
+    border-top-left-radius:4px!important;
+    border-top-right-radius:4px!important;
+}
+.htlPlnCsst .planThumb .htlPlnTxt {
+    float: none;
+    width: auto;
+    margin-bottom: 10px;
+}
+.htlPlnCsst .planThumb .textArea{
+    float:left;
+    width:712px;
+}
+.htlPlnCsst .planThumb .textArea .htlPlnDtlPrv, .htlPlnCsst .planThumb .textArea .htlPlnDtl{
+    width:712px;
+}
+.htlPlnCsst .planThumb .textArea .htlPlnPrd,{
+    width:482px;
+}
+.htlPlnCsst .planThumb .htlPlnAddFavoriteBtn{
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:1;
+}
+.htlPlnCsst .planThumb .htlPlnAddFavoriteBtn a{
+    font-size:85%;
+    display:block;
+    border: 1px solid #cccccc;
+    /* for IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', endColorStr='#eaeaea', GradientType=0);
+    /* for IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEFEFE', endColorstr='#EAEAEA', GradientType=0)";
+    background: -moz-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+    background: linear-gradient(to bottom, #fefefe 0%, #eaeaea 100%);
+    border-radius: 5px;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: #333333!important;
+    zoom: 1;
+}
+.htlPlnCsst .planThumb .hiddenTyp, .rmTypItm{
+    margin-top: 5px;
+    border-top: 1px dotted #CCC;
+    padding-top: 15px;
+}
+
+#htlCntntArea .htlPlnCsst .planThumb .htlPlnRmTyp.expanded{
+    border-top: 1px dotted #CCC;
+    padding-top:10px!important;
+}
+.htlPlnCsst .planThumb .planDtlExpandable {
+    height: 14em;
+}
+.htlPlnCsst .planThumb .stdRsrvBtn a, #htlCntntArea.RthDomestic02 .stdRsrvBtn a, #htlCntntArea.RthOverseas02 .stdRsrvBtn a{
+    border: 1px solid #bf0c0b;
+    background: #bd0a0a;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#e0312b, endColorStr=#bd0a0a, GradientType=0);
+    /* for IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e0312b, endColorstr=#bd0a0a, GradientType=0)";
+    background: -moz-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0312b), color-stop(100%, #bd0a0a));
+    background: -webkit-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: -o-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: -ms-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+    background: linear-gradient(to bottom, #e0312b 0%, #bd0a0a 100%);
+    border-radius: 5px;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: #ffffff!important;
+}
+.htlPlnCsst .planThumb .htlPlnRmTypPrc li{
+    border-bottom:none;
+    border-top: 1px solid #CCC;
+    padding-top: 8px;
+}
+.htlPlnCsst .planThumb .htlPlnRmTypPrc li {
+    border-top/***/: none9;
+    border-bottom/***/: 1px solid #CCC9;
+    padding-top/***/: 0px9;
+    padding-bottom/***/: 8px9;
+}
+.htlPlnCsst .planThumb .htlPlnRmTypPrc li:first-child{
+    border-top:none;
+    padding-top: 0px;
+}
+.htlPlnCsst .planThumb .htlPlnPht li{
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.htlPlnCsst .planThumb .crdAppl span{
+    position: relative;
+    background: #FFC;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    padding: 8px 5px;
+    zoom: 1;
+}
+body.totalPrice .htlPlnCsst .planThumb .htlPlnRmTypPrcArea .crdAppl span,
+body.averagePrice .htlPlnCsst .planThumb .htlPlnRmTypPrcArea .crdAppl span,
+body.totalPricePerPerson .htlPlnCsst .planThumb .htlPlnRmTypPrcArea .crdAppl span,
+body.averagePricePerPerson .htlPlnCsst .planThumb .htlPlnRmTypPrcArea .crdAppl span{
+    width:auto;
+}
+.htlPlnCsst .planThumb .blghtOthrBtn.collapse.blghtOthrBtnOR{
+    display:none;
+}
+.htlPlnCsst .planThumb .blghtOthrBtnOR a {
+    border: none;
+    filter: none;
+    -ms-filter:none;
+    background: none;
+    background: none;
+    background: none;
+    background: none;
+    background: none;
+    border-radius: none;
+    padding: 0px;
+    text-align: left;
+    text-decoration: none;
+    display:inline;
+    font-weight: bold;
+    color: #1D54A7!important;
+    zoom: 0;
+}
+.htlPlnCsst .planThumb .proper{
+    font-size:120%;
+    line-height:1.8em;
+}
+p#comentNewSqueezes {
+    font-size: 82%;
+    line-height: 1.1;
+    margin: 0 0 5px;
+    padding: 0em;
+    text-indent: 0em;
+}
+#htlCntntArea.RthDomestic02 .htlPlnInfo .roomPrice .proper, #htlCntntArea.RthOverseas02 .htlPlnInfo .roomPrice .proper{
+    font-size: 120%;
+    line-height:1.8em;
+}
+
+/* html version蟾ｮ縺ｫ繧医ｋfontsize邯呎価縺ｮ蝠城｡後〒霑ｽ蜉縲choi*/
+
+div.oh div.sltBox table {font-size:10pt;}
+
+/*豬ｷ螟悶・繝・Ν縺ｮ縺雁ｮ｢讒倥・螢ｰ縺ｮ繝帙ユ繝ｫ繝ｪ繝ｳ繧ｯ */
+
+div#htlMainContent p#pageTitle{
+    clear: both;
+    margin: 13px 0;
+    padding-right: 185px;
+    font-weight: bold;
+}
+
+/*link color*/
+div#htlMainContent p#pageTitle a:link       { color : #5454f6;}
+div#htlMainContent p#pageTitle a:visited    { color : #632088;}
+div#htlMainContent p#pageTitle a:visited:hover,
+div#htlMainContent p#pageTitle a:link:hover { color : #1D54A7;}
+div#htlMainContent p#pageTitle a:visited:active,
+div#htlMainContent p#pageTitle a:link:active{ color : #bf0000;}
+
+/*髟ｷ縺・命險ｭ蜷榊ｯｾ蠢�*/
+div#htlMainContent h1#pageTitle {
+    padding-right: 185px;
+}
+
+
+/* secret plan */
+
+.secretTtl{
+    font-size: 120%;
+    padding: 10px 0;
+}
+
+.scrt-pvs .secretTtl{
+    text-indent: -9999px;
+    background-image: url(../images/logo_pvs.gif);
+    background-position: 10px 10px;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-color: #5D5A43;
+    height: 31px;
+    padding-left: 5px;
+
+}
+
+.scrt-pvs .scrt-pvs .scrt-plan{
+    display: none;
+}
+.scrt-pvs .scrt-pvs .prvt-sales{
+    display: inline;
+}
+
+.scrt-pvs .scrt-plan{
+    display: inline;
+}
+.scrt-pvs .prvt-sales{
+    display: none;
+}
+
+.scrt-pvs .scrt-radio-ttl{
+    text-indent: -9999px;
+    background-image: url(../images/logo_pvs_mini.gif);
+    background-repeat: no-repeat;
+    height: 15px;
+}
+
+.scrt-pvs .scrt-radio-ttl span{
+    visibility: hidden;
+}
+
+#kywrdBox{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#kywrdBox dt{
+    border-top-left-radius: 4px!important;
+    border-top-right-radius: 4px!important;
+    border-bottom-left-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+    background-color: #72A331;
+    border: 1px solid #77AF27;
+    border-bottom: none;
+    background-image: none;
+    padding: 5px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+#kywrdBox dd{
+    border-bottom-left-radius: 4px!important;
+    border-bottom-right-radius: 4px!important;
+    border: 1px solid #77AF27!important;
+    padding: 50px 160px;
+    text-align: center;
+}
+
+#kywrdBox dd p{
+    color: #BF0000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#kywrdBox dd .kwrdInput{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #EAEAEA;
+    padding: 80px 30px;
+}
+
+.kwrdInput span{
+    display: block;
+    marign: 0 auto;
+}
+
+.kwrdInput span .secretForm{
+    padding: 5px;
+    width: 25em;
+}
+
+.kwrdInput span .secretSubmit{
+    width: 10em;
+}
+
+.backLnkg{
+    border-top: 1px dotted #CCC;
+    padding-top: 10px;
+    clear: both;
+}
+
+.backLnkg a{
+    font-size:80%;
+    display:block;
+    border: 1px solid #cccccc;
+    /* for IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', endColorStr='#eaeaea', GradientType=0);
+    /* for IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEFEFE', endColorstr='#EAEAEA', GradientType=0)";
+    background: -moz-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+    background: linear-gradient(to bottom, #fefefe 0%, #eaeaea 100%);
+    border-radius: 5px;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: #333333!important;
+    zoom: 1;
+    margin-bottom: 15px;
+}
+
+/* nrmlPlnLnk */
+
+.nrmlPlnLnk{
+    width: 30%;
+    margin: 20px auto;
+}
+
+.nrmlPlnLnk a{
+    display: block;
+    padding: 10px;
+    background-color: #66B821;
+    color: #FFF!important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* added on 2015.02.23 */
+/* photo gallery thumbnails */
+.photoArea a{
+    display: table;
+    width: 100%;
+}
+.photoArea a .description-text{
+    padding-top: 5px;
+    display: table-row;
+    word-break: bbreak-all;
+    text-align: left;
+}
+.photoArea a .description-text strong{
+    font-weight: normal;
+    display: block;
+    margin-top: 8px;
+}
+.photoArea a .photo-video-thumbnail{
+    display: table-cell;
+    text-align: center;
+    width: 210px;
+    height: 210px;
+    background-color: #000;
+    vertical-align: middle;
+}
+
+.photoArea a .photo-video-thumbnail img{
+    margin-bottom: 0!important;
+}
+
+/* embedded縲player on plan list page */
+
+.embedded-player{
+    width: 100%;
+    background-color: #000;
+    display: table;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+}
+
+.embedded-player span{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* photo & video container */
+
+.photo-video-container{
+    width: 950px;
+    height: 534px;
+    background-color: #000;
+    display: table;
+    margin-bottom: 10px;
+}
+
+.photo-video-display{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.std-photo-video-thumbnail{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.std-photo-video-thumbnail__item{
+    display: table;
+    width: 110px;
+    height: 110px;
+    background-color: #000;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.std-photo-video-thumbnail__item span{
+    position: relative;
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.std-photo-video-thumbnail__item span:hover:before{
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-repeat:no-repeat;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABuCAYAAADGWyb7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxNS43LjIz9a9AVgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAEYSURBVHic7dHBCQAhEMDA81q2f9Ye/EhgpoJA1szsj5z/dQB3jIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOiDq3vBEwk0Hj4AAAAAElFTkSuQmCC);
+    z-index: 2;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.std-photo-video-thumbnail__item span.playing{
+    cursor: default;
+}
+
+.std-photo-video-thumbnail__item span.playing:after{
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-repeat:no-repeat;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABuCAYAAADGWyb7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxNS43LjIz9a9AVgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAEYSURBVHic7dHBCQAhEMDA81q2f9Ye/EhgpoJA1szsj5z/dQB3jIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOijIsyLsq4KOOiDq3vBEwk0Hj4AAAAAElFTkSuQmCC);
+    z-index: 2;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.std-photo-video-thumbnail__item span.playing:before{
+    display: none;
+}
+
+.std-photo-video-thumbnail__item span.play-button:after{
+    display: inline-block;
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    margin-left: -29px;
+    content: "";
+    background-repeat:no-repeat;background-image:url(data:image/png;base64,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);
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.std-photo-video-thumbnail__item span{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.std-photo-video-thumbnail > *:first-child + * + * + * + * + * + * + *,
+.std-photo-video-thumbnail > *:first-child + * + * + * + * + * + * + * + * + * + * + * + * + * + * + *{
+    margin-right: 0;
+}
+
+.std-photo-video-thumbnail .std-photo-video-thumbnail__item:nth-child(8),
+.std-photo-video-thumbnail .std-photo-video-thumbnail__item:nth-child(16){
+    margin-right: 0;
+}
+
+/* onsen page */
+#onsenArea,#petArea{
+    margin-top: 10px;
+}
+
+/* plans on left clmn */
+#upfrntPlans{
+    font-size: 80%;
+    width: 210px;
+    margin-bottom: 15px;
+}
+
+#upfrntPlans .ttlBar{
+    text-align: center;
+    font-size: 120%;
+    padding: 5px;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #73AB23;
+    background: -moz-linear-gradient(top, #73AB23, #457F0F);
+    background: -o-linear-gradient(top, #73AB23, #457F0F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#73AB23), to(#457F0F));
+    background: #73AB23 url(http://img.travel.rakuten.co.jp/share/themes/top/images/n/top_sprite.png) repeat-x 0 -1600px\9;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright:4px;
+    -moz-border-radius-bottomleft:0px;
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    -webkit-border-bottom-left-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    width: auto!important;
+    margin: 0;
+}
+
+#upfrntPlans .outerBox{
+    padding: 5px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright:0px;
+    -moz-border-radius-bottomleft:4px;
+    -moz-border-radius-bottomright:4px;
+    -webkit-border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -webkit-border-bottom-left-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    border-left: 2px solid #76AE25;
+    border-right: 2px solid #76AE25;
+    border-bottom: 2px solid #76AE25;
+    background-color: #FFF;
+    margin-left: 0!important;
+}
+
+#clmnPlnLst p{
+    font-weight: bold;
+}
+
+#clmnPlnLst li{
+    border-bottom: 1px dotted #CCC;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    line-height: 140%;
+}
+
+#clmnPlnLst dt{
+    background-color: #FFF;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+#clmnPlnLst strong{
+    color: #BF0000;
+}
+
+.clmnPlnLstLnk{
+    display: block;
+    margin: 10px 0;
+    background-repeat: no-repeat;
+    padding-left: 14px;
+}
+
+.clmnPlnLstLnk:link       { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01.gif);}
+.clmnPlnLstLnk:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_visited.gif);}
+.clmnPlnLstLnk:visited:hover, .clmnPlnLstLnk:link:hover{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_hover.gif);}
+.clmnPlnLstLnk:visited:active, .clmnPlnLstLnk:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow01_active.gif);}
+
+
+.chngCnxlBtn{
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px dotted #CCC;
+
+}
+
+.chngCnxlBtn a{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: no-repeat;
+    background-position: -670px -1314px;
+    padding-left: 13px;
+}
+
+#clmnPlnLst dd{
+    margin-top: 5px;
+    position: relative;
+}
+
+#clmnPlnLst dd span{
+    font-size: 80%;
+}
+
+#clmnPlnLst .rtprts__coupon{
+    margin-top: 0;
+}
+
+#clmnPlnLst dd p a{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 18%;
+}
+
+#clmnPlnLst .rtprts__item-01, #clmnPlnLst .rtprts__item-02{
+    font-size: 115%;
+    line-height: 150%;
+}
+
+#clmnPlnLst span.rtprts__item-01{
+    padding-bottom: 5px;
+}
+
+.noCndTxt{
+    display: block;
+    padding: 15px 10px;
+    font-weight: bold;
+    color: #BF0000;
+    line-height: 150%;
+}
+
+#frmBox{
+    display: none;
+}
+
+.blghtOthrBtn a {
+border: 1px solid #cccccc;
+background: #eaeaea;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#FEFEFE, endColorStr=#EAEAEA, GradientType=0);
+/* for IE 8 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FEFEFE, endColorstr=#EAEAEA, GradientType=0)";
+background: -moz-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
+background: -webkit-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+background: -o-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+background: -ms-linear-gradient(top, #fefefe 0%, #eaeaea 100%);
+background: linear-gradient(to bottom, #fefefe 0%, #eaeaea 100%);
+border-radius: 5px;
+padding: 8px 10px;
+text-align: center;
+text-decoration: none;
+display: block;
+font-weight: bold;
+color: #333333!important;
+}
+
+.stdRsrvBtn a {
+border: 1px solid #bf0c0b;
+background: #bd0a0a;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#e0312b, endColorStr=#bd0a0a, GradientType=0);
+/* for IE 8 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e0312b, endColorstr=#bd0a0a, GradientType=0)";
+background: -moz-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0312b), color-stop(100%, #bd0a0a));
+background: -webkit-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+background: -o-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+background: -ms-linear-gradient(top, #e0312b 0%, #bd0a0a 100%);
+background: linear-gradient(to bottom, #e0312b 0%, #bd0a0a 100%);
+border-radius: 5px;
+padding: 8px 10px;
+text-align: center;
+text-decoration: none;
+display: block;
+font-weight: bold;
+color: #ffffff!important;
+}
+
+.stdRsrvBtn{
+
+}
+
+/* plan photo */
+.lcPlnPht{
+    display: block;
+    /*border: 1px solid #CCC;*/
+    float: left;
+    width: 60px;
+    height: 60px;
+    /*padding: 3px;*/
+    margin-right: 5px;
+}
+
+/* plan name */
+.clmnPlnNm{
+    float: left;
+    width: 66%;
+}
+
+/* reserve button */
+.stdRsrvBtn.smlSz a{
+    width: 30%;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+.lcPlnPht img{
+    width: 100%;
+}
+
+.shwPlnPrce span,
+.shwPlnPrce strong{
+    display: block;
+}
+
+.shwPlnPrce small{
+    font-size: 80%;
+}
+
+.shwPlnCndtn{
+    color: #BF0000;
+}
+
+/* Plan Title */
+
+.lcPlnTtl{
+    /*background-color: #E4F5CD;*/
+    padding: 3px;
+    line-height: 150%;
+}
+
+/* back to the list link */
+
+#bkRlstLnk{
+    font-size: 80%;
+}
+
+#bkRlstLnk a{
+    background-repeat: no-repeat;
+    padding-left: 14px;
+}
+
+#bkRlstLnk a:link      { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03.gif);}
+#bkRlstLnk a:visited    { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_visited.gif);}
+#bkRlstLnk a:visited:hover,
+#bkRlstLnk a:link:hover { background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_hover.gif);}
+#bkRlstLnk a:visited:active,
+#bkRlstLnk a:link:active{ background-image:url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/icon_arrow03_active.gif);}
+
+/* 2013.10.08 */
+ul.wrapSet li{
+    display: block!important;
+}
+
+/* plans @ top */
+
+.plansAtTop{
+    padding: 5px 0 10px 5px;
+}
+
+.plansAtTop ul{
+    overflow: hidden;
+}
+
+.plansAtTop li dt{
+    font-weight: bold;
+    /*margin-bottom: 10px;*/
+}
+
+.plansAtTop li dd{
+    clear: both;
+    position: relative;
+}
+
+.plansAtTop li dd strong{
+    color: #BF0000;
+    font-size: 120%;
+}
+
+.topPlanBtn{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 80%!important;
+}
+
+.plansAtTop .clmnPlnLstLnk{
+    float: right;
+    margin-right: 10px;
+}
+
+.plansAtTop .plnRmNm{
+    font-size: 90%;
+}
+
+.plansAtTop .clmnPlnLstLnk{
+    font-size: 80%;
+}
+
+#clmnPlnLst span.incldTax{
+    font-size: 60%;
+    margin-left: -5px;
+}
+
+.rmTypeMeal{
+    border: none!important;
+    margin-bottom: 5px;
+}
+
+.rmTypeMeal li{
+    display: inline!important;
+    border: none!important;
+    font-size: 120%!important;
+}
+
+.rmTypeMeal .rm_bed{
+    background-color: #72A331;
+    color: #FFF;
+    text-align: center;
+    -moz-box-sizing: 2px;
+    -webkit-box-sizing: 2px;
+    border-radius: 2px;
+    padding: 3px 5px 3px 5px;
+    margin-right: 10px;
+}
+
+.rmTypeMeal .meal{
+    background-image: url(http://img.travel.rakuten.co.jp/share/themes/hotel/images/htl_page_sprite.gif);
+    background-repeat: none;
+    background-position: -1px -1444px;
+    padding-left: 15px;
+}
+
+/* change condition btn */
+
+#chngCndtnBtn.stdRsrvBtn.smlSz a{
+    width: 60%;
+}
+
+/* price condition */
+
+.prcCndtn{
+    font-size: 70%;
+}
+
+/* plans on top */
+
+div#htlContents{
+    position: relative;
+}
+
+.plansAtTop{
+    width: 200px;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    z-index: 9000;
+    border: 2px solid #76AE25;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 4px 4px #999999;
+    -moz-box-shadow: 0px 4px 4px #999999;
+    box-shadow: 0px 2px 2px #999999;
+    text-align: center;
+    padding: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.plansAtTop ul{
+    overflow: hidden;
+}
+
+.plansAtTop li{
+    padding: 3px;
+    font-size: 80%;
+    margin-left: 5px;
+    line-height: 130%;
+}
+
+.plansAtTop li dt{
+    display: inline;
+    font-size: 72%;
+    color: #BF0000;
+    font-weight: bold;
+}
+
+.plansAtTop li dd{
+    position: relative;
+    display: inline;
+}
+
+.plansAtTop li dd strong{
+    color: #BF0000;
+    font-size: 130%;
+}
+
+.plansAtTop li dd i{
+    font-style: normal;
+    color: #BF0000;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.topPlanBtn{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 80%!important;
+}
+
+.plansAtTop .clmnPlnLstLnk{
+    float: right;
+    margin-right: 10px;
+}
+
+.plansAtTop .plnRmNm{
+    font-size: 90%;
+}
+
+.plansAtTop .clmnPlnLstLnk,
+.plansAtTop .incldTax{
+    font-size: 80%;
+}
+
+.plansAtTop .plnAtTopCndtn{
+    font-size: 68%;
+    color: #BF0000;
+}
+
+.fltPlnBtn{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fltPlnBtn a{
+    font-size: 68%;
+    display: block;
+    padding: 3px 0;
+    margin-bottom: 5px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    color: #FFF!important;
+    background: #04163A;
+    background: -moz-linear-gradient(top, #06255F 0%, #04163A 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#06255F), color-stop(100%,#04163A));
+    background: -webkit-linear-gradient(top, #06255F 0%,#04163A 100%);
+    background: -o-linear-gradient(top, #06255F 0%,#04163A 100%);
+    background: -ms-linear-gradient(top, #06255F 0%,#04163A 100%);
+    background: linear-gradient(to bottom, #06255F 0%,#04163A 100%);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06255F', endColorstr='#04163A',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06255F', endColorstr='#04163A',GradientType=0 );
+    text-decoration: none;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.fltPlnBtn a:hover{
+    color: #FFF!important;
+}
+
+/* change condition btn */
+
+#chngCndtnBtn.stdRsrvBtn.smlSz a{
+    width: 60%;
+}
+
+/* price condition */
+
+.prcCndtn{
+    font-size: 70%;
+}
+
+/* ===================================================
+  coupon
+=================================================== */
+.crdBln {display: none;}
+.rtprts__coupon > a:before,
+.rtprts__coupon > span:before,
+.rtprts__coupon > a > span.rtprts__item-01:before,
+.rtprts__coupon > span > span.rtprts__item-01:before,
+.rtprts__coupon > a > span.rtprts__item-02:after{
+    background-image: url(http://img.travel.rakuten.co.jp/share/common/images/sprite-pc.png);
+    background-repeat:no-repeat;
+}
+.rtprts__coupon{
+    width:auto;
+    height:21.2px;
+    margin-top:8px;
+    padding:15px 0px 4px 0px;
+    position:relative;
+    background-color:none;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+    -o-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    box-sizing:content-box;
+}
+.rtprts__display{
+    width:auto;
+    height:auto;
+    padding:0;
+}
+.rtprts__coupon > a,
+.rtprts__coupon > span{
+    width:auto;
+    padding:5px 5px 4px 5px;
+    margin-top:10px;
+    display:inline-block;
+    position: relative;
+    line-height:1.6;
+    color:#fff;
+    border:none;
+    background-color:#66B821;
+    border:solid 1px #66B821;
+    font-size:75%;
+    font-weight:normal;
+    text-align:left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius:4px;
+    letter-spacing: -.40em; /* æå­éãè©°ãã¦ééãåé¤ãã */
+}
+.rtprts__coupon > a,
+.rtprts__coupon > a:hover,
+.rtprts__coupon > a:link,
+.rtprts__coupon > a:active{
+    color:#fff!important;
+}
+.rtprts__coupon > a:hover span,
+.rtprts__coupon > a:active span{
+    text-decoration:underline!important;
+}
+/* ------------------------------------ */
+.rtprts__coupon > a:before,
+.rtprts__coupon > span:before{
+    width:20px;
+    height:11px;
+    display:block;
+    content:"";
+    position:absolute;
+    top:0;
+    left:45px;
+    margin-top:-11px;
+    background-position:-120px -290px;
+}
+.rtprts__coupon > span:before{
+    background-position:-150px -290px;
+}
+/* ------------------------------------ */
+.rtprts__coupon.rtprts__acquired{
+    width:auto;
+    height:auto;
+    padding:0;
+}
+.rtprts__coupon.rtprts__acquired > span{
+    color:#66B821;
+    background-color:#fff;
+}
+.rtprts__coupon.rtprts__acquired > span:after{
+    background-position:-38px 0px;
+}
+/* ------------------------------------ */
+.rtprts__coupon > a > span,
+.rtprts__coupon > span > span{
+    width:auto;
+    display:inline-block;
+    letter-spacing: normal;
+    white-space:nowrap;
+}
+/* ------------------------------------ */
+.rtprts__coupon > a > span.rtprts__item-01,
+.rtprts__coupon > span > span.rtprts__item-01{
+    position:relative;
+    padding-left:33px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.rtprts__coupon > a > span.rtprts__item-01:before,
+.rtprts__coupon > span > span.rtprts__item-01:before{
+    width:28px;
+    height:18px;
+    display:block;
+    position:absolute;
+    content:"";
+    top:0px;
+    left:0px;
+    background-position:0px -290px;
+}
+.rtprts__coupon > span > span.rtprts__item-01:before{
+    background-position: -38px -290px;
+}
+.rtprts__coupon > a > span.rtprts__item-02{
+    position:relative;
+    padding-right:39px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.rtprts__coupon > a > span.rtprts__item-02:after{
+    display:block;
+    width:34px;
+    height:18px;
+    position:absolute;
+    content:"";
+    top:0px;
+    right:0px;
+    margin-top:0px;
+    background-position:-76px -290px;
+}
+/* ------------------------------------ */
+.rtprts__coupon.rtprts__loading-bg-fff{
+    width:auto;
+    height:21.2px;
+    padding:15px 0px 4px 0px;
+    position:relative;
+    background-color:#fff;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+    -o-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    box-sizing:content-box;
+}
+.rtprts__coupon.rtprts__loading-bg-fff *{
+    display:none!important;
+    padding:10px 0;
+}
+.rtprts__coupon.rtprts__loading-bg-fff:after{
+    width:24px;
+    height:24px;
+    display:block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-12px;
+    margin-top:-7px;
+    overflow:hidden;
+    content:"";
+    background-image: url(http://img.travel.rakuten.co.jp/share/common/images/rtprts__loading-bg-fff.gif);
+    background-repeat: no-repeat;
+    background-color:#fff;
+}
+/* ------------------------------------ */
+.rtprts__coupon.rtprts__error{
+    width:auto;
+    height:auto;
+    padding:0;
+
+    background-color:#fff;
+}
+.rtprts__coupon.rtprts__error > span{
+    color:#bf0000;
+    border-color:#bf0000;
+}
+.rtprts__coupon.rtprts__error > a,
+.rtprts__coupon.rtprts__error > span{
+    background-color:#fff;
+    border-color:#bf0000;
+}
+.rtprts__coupon.rtprts__error > a:before,
+.rtprts__coupon.rtprts__error > span:before{
+    background-position:-180px -290px;
+}
+.rtprts__coupon.rtprts__error > a > span.rtprts__item-01,
+.rtprts__coupon.rtprts__error > span > span.rtprts__item-01{
+    padding-left:0;
+}
+.rtprts__coupon.rtprts__error > a > span.rtprts__item-02,
+.rtprts__coupon.rtprts__error > span > span.rtprts__item-02{
+    padding-right:0;
+}
+.rtprts__coupon.rtprts__error > span > span.rtprts__item-01:before,
+.rtprts__coupon.rtprts__error > span > span.rtprts__item-02:after{
+    display:none;
+}
+.rtprts__coupon.rtprts__error > a,
+.rtprts__coupon.rtprts__error > a:hover,
+.rtprts__coupon.rtprts__error > a:link,
+.rtprts__coupon.rtprts__error > a:active{
+    color:#bf0000!important;
+}
+/* ===================================================
+  /coupon
+=================================================== */

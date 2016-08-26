@@ -11,6 +11,11 @@
 <!-- BootstrapのCSS読み込み -->
 <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 <link href="../css/my_bootstrap.css" rel="stylesheet">
+
+<!-- PlanのCSS読み込み -->
+<link href="/app/assets/stylesheets/plan.css" rel="stylesheet">
+
+
 <!-- jQuery読み込み -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- BootstrapのJS読み込み -->
@@ -25,8 +30,12 @@
   
   
 <div class="container bg-success">  <!-- 大きな枠 -->
-<img src="/images/logo.png">
+<img class="logo" src="/images/logo.png">
 <h1>プラン提案</h1>
+<div class="my_page">
+  <%= session[:user_name] %>さん、こんにちは<br>
+  <a href="./mypage">マイページ</a> | <a href="./logout">ログアウト</a><br><br>
+</div>
 <div class="planResult">
 <div class="list-group　planOption">
 <br>
@@ -98,127 +107,93 @@ src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaU
 
 
 <div  class="container">
-<table class="table">
+<table class="table" align="center" style="border-style: none;">
+<center>
 <thead>
-<tr>
-<th>順番</th>
-<th>観光地</th>
-<th>次の目的地までの所要時間</th>
-<th>オススメホテル</th>
-
+<tr style="border-style: none;">
+<th style="border-style: none;"><!--順番--></th>
+<th style="border-style: none;">観光地</th>
+<!--<th>次の目的地までの所要時間</th>-->
+<th style="border-style: none;">オススメホテル</th>
 </tr>
 </thead>
+</center>
 <tbody>
-<tr>
-<td>1
-
-<img src= "<%= @images_picture_0_0.picture_url %>" width=40 height=40>
-
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_0_0.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_0[0]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+    <%= @location_info_0.location_name %>
 </td>
-<td>
-<% str2= @routes_infos_0[0]["start_address"] %>
-<% strAry2 = str2.split(",") %>
-<%= strAry2[0] %>
-<%= @location_info_0.location_name %>
-</td>
-
-<td>
-  <%= @routes_infos_0[0]['duration']['text'] %>
-</td>
-
-<td>
-<% if @hotel_info_0_0 %>
-<%= @hotel_info_0_0["hotelName"] %>
-<br><br>
-<a href='<%= @hotel_info_0_0["hotelInformationUrl"]%>' target='_blank'>
-<img src='<%= @hotel_info_0_0["hotelThumbnailUrl"] %>'>
-</a>
-<%= @hotel_info_0_0["hotelSpecial"]%>
-*詳しくは画像をクリック！
-<% else %>
-近くに宿が見つかりませんでした。
-<% end%>
+<td style="border-style: none;"><% if @hotel_info_0_0 %>
+    <%= @hotel_info_0_0["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_0_0["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_0_0["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_0_0["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
 </td>
 </tr>
+<tr  style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_0[0]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
 
-<tr>
-<td>2
-<img src= "<%= @images_picture_0_1.picture_url %>" width=40 height=40>
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_0_1.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_0[1]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
 </td>
-
-<td>
-<% str2= @routes_infos_0[1]["start_address"] %>
-<% strAry2 = str2.split(",") %>
-<%= strAry2[0] %>
-</td>
-<td><%= @routes_infos_0[1]['duration']['text'] %></td>
-<td>
-<% if @hotel_info_0_1 %>
-<%= @hotel_info_0_1["hotelName"] %>
-<br><br>
-<a href='<%= @hotel_info_0_1["hotelInformationUrl"]%>' target='_blank'>
-<img src='<%= @hotel_info_0_1["hotelThumbnailUrl"] %>'>
-</a>
-<%= @hotel_info_0_1["hotelSpecial"]%>
-*詳しくは画像をクリック！
-<% else %>
-近くに宿が見つかりませんでした。
-<% end%>
+<td style="border-style: none;"><% if @hotel_info_0_1 %>
+    <%= @hotel_info_0_1["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_0_1["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_0_1["hotelThumbnailUrl"] %>'></a>
+    <div><%= @hotel_info_0_1["hotelSpecial"]%>*詳しくは画像をクリック！</div>
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
 </td>
 </tr>
-<tr>
-<td>3
+<tr style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_0[1]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
 
-<img src= "<%= @images_picture_0_2.picture_url %>" width=40 height=40>
-
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_0_2.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_0[2]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
 </td>
-<td>
-
-<% str2= @routes_infos_0[2]["start_address"] %>
-<% strAry2 = str2.split(",") %>
-<%= strAry2[0] %>
-</td>
-<td><%= @routes_infos_0[2]['duration']['text'] %></td>
-<td>
-<% if @hotel_info_0_2 %>
-<%= @hotel_info_0_2["hotelName"] %>
-<br><br>
-<a href='<%= @hotel_info_0_2["hotelInformationUrl"]%>' target='_blank'>
-<img src='<%= @hotel_info_0_2["hotelThumbnailUrl"] %>'>
-</a>
-<%= @hotel_info_0_2["hotelSpecial"]%>
-*詳しくは画像をクリック！
-<% else %>
-近くに宿が見つかりませんでした。
-<% end%>
+<td style="border-style: none;"><% if @hotel_info_0_2 %>
+    <%= @hotel_info_0_2["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_0_2["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_0_2["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_0_2["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
 </td>
 </tr>
-<tr>
-  
-<td>4
-<img src= "<%= @images_picture_0_3.picture_url %>" width=40 height=40>
-</td>
+<tr style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_0[2]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
 
-<td>
-<% str2= @routes_infos_0[2]["end_address"] %>
-<% strAry2 = str2.split(",") %>
-<%= strAry2[0] %>
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_0_3.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_0[2]["end_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
 </td>
-<td></td>
-<td>
-<% if @hotel_info_0_3 %>
-<%= @hotel_info_0_3["hotelName"] %>
-<br><br>
-<a href='<%= @hotel_info_0_3["hotelInformationUrl"]%>' target='_blank'>
-<img src='<%= @hotel_info_0_3["hotelThumbnailUrl"] %>'>
-</a>
-<%= @hotel_info_0_3["hotelSpecial"]%>
-*詳しくは画像をクリック！
-<% else %>
-近くに宿が見つかりませんでした。
-<% end%>
+<td style="border-style: none;"><% if @hotel_info_0_3 %>
+    <%= @hotel_info_0_3["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_0_3["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_0_3["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_0_3["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
 </td>
-
 </tr>
 </tbody>
 </table>
@@ -227,16 +202,20 @@ src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaU
 </div>
 </li>
 
-<br>
-<button type="button">保存</button>
-
+<div class="share">
+  <br>
+  <button class="save_btn" type="button">保存</button>
+  <br>
+  プランをシェアする:
+  <img src="/images/140818_1.png" width="100" height="20">
+</div>
 </ul>
-
 </div>
 </div>
-
 </div>
 
+
+<!--
 <div style="padding: 16px; border: solid 3px #4169e1; border-radius: 10px; background-color: #f0f8ff; margin-top: 30px; margin-bottom: 30px;">
 
 <div id="plan2">
@@ -386,8 +365,13 @@ src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaU
 </div>
 
 </div>
-<br>
-<button type="button">保存</button>
+<div class="share">
+  <br>
+  <button class="save_btn" type="button">保存</button>
+  <br>
+  プランをシェアする:
+  <img src="/images/140818_1.png" width="100" height="20">
+</div>
 
 </ul>
 
@@ -550,9 +534,13 @@ src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaU
 
 </div>
 <ul>
-<br>
-<button type="button">保存</button>
-
+<div class="share">
+  <br>
+  <button class="save_btn" type="button">保存</button>
+  <br>
+  プランをシェアする:
+  <img src="/images/140818_1.png" width="100" height="20">
+</div>
 </ul>
 
 </div>
@@ -562,6 +550,305 @@ src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaU
 
 </div>
 </div>
+-->
+<div class="planDetail">
+  
+  <div style="padding: 16px; border: solid 3px #4169e1; border-radius: 10px; background-color: #f0f8ff; margin-top: 30px; margin-bottom: 30px;">
+  
+
+<div id="plan2">
+<div class="planname">
+<span class="label"><h3><FONT color="black">プラン2</FRONT></h3></span>
+</div>
+
+<iframe
+class="center"
+width="450"
+height="450"
+frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaUtUuS43HjNmhnjsW8 &origin=
+<% str2 = @routes_infos_1[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&destination=<% str2 = @routes_infos_1[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&waypoints=  
+<% str2 = @routes_infos_1[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+|
+<% str2= @routes_infos_1[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+<br>
+
+<div class="planDetail">
+<div class="routeDetail">
+
+
+<div  class="container">
+<table class="table" align="center" style="border-style: none;">
+<center>
+<thead>
+<tr style="border-style: none;">
+<th style="border-style: none;"><!--順番--></th>
+<th style="border-style: none;">観光地</th>
+<!--<th>次の目的地までの所要時間</th>-->
+<th style="border-style: none;">オススメホテル</th>
+</tr>
+</thead>
+</center>
+<tbody>
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_1_0.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_1[0]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+    <%= @location_info_1.location_name %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_1_0 %>
+    <%= @hotel_info_1_0["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_1_0["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_1_0["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_1_0["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+<tr  style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_1[0]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
+
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_1_1.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_1[1]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_1_1 %>
+    <%= @hotel_info1_1["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_1_1["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_1_1["hotelThumbnailUrl"] %>'></a>
+    <div><%= @hotel_info_1_1["hotelSpecial"]%>*詳しくは画像をクリック！</div>
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+<tr style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_1[1]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
+
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_1_2.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_1[2]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_1_2 %>
+    <%= @hotel_info_1_2["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_1_2["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_1_2["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_1_2["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+<tr style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_1[2]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
+
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_1_3.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_1[2]["end_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_1_3 %>
+    <%= @hotel_info_1_3["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_1_3["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_1_3["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_1_3["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</li>
+
+<div class="share">
+  <br>
+  <button class="save_btn" type="button">保存</button>
+  <br>
+  プランをシェアする:
+  <img src="/images/140818_1.png" width="100" height="20">
+</div>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="planDetail">
+  
+  <div style="padding: 16px; border: solid 3px #4169e1; border-radius: 10px; background-color: #f0f8ff; margin-top: 30px; margin-bottom: 30px;">
+  
+
+<div id="plan3">
+<div class="planname">
+<span class="label"><h3><FONT color="black">プラン3</FRONT></h3></span>
+</div>
+
+<iframe
+class="center"
+width="450"
+height="450"
+frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaUtUuS43HjNmhnjsW8 &origin=
+<% str2 = @routes_infos_2[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&destination=<% str2 = @routes_infos_0[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&waypoints=  
+<% str2 = @routes_infos_2[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+|
+<% str2= @routes_infos_2[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+<br>
+
+<div class="planDetail">
+<div class="routeDetail">
+
+
+<div  class="container">
+<table class="table" align="center" style="border-style: none;">
+<center>
+<thead>
+<tr style="border-style: none;">
+<th style="border-style: none;"><!--順番--></th>
+<th style="border-style: none;">観光地</th>
+<!--<th>次の目的地までの所要時間</th>-->
+<th style="border-style: none;">オススメホテル</th>
+</tr>
+</thead>
+</center>
+<tbody>
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_2_0.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_2[0]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+    <%= @location_info_2.location_name %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_2_0 %>
+    <%= @hotel_info_2_0["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_2_0["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_2_0["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_2_0["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+<tr  style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_2[0]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
+
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_2_1.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_2[1]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_2_1 %>
+    <%= @hotel_info_0_1["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_2_1["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_2_1["hotelThumbnailUrl"] %>'></a>
+    <div><%= @hotel_info_2_1["hotelSpecial"]%>*詳しくは画像をクリック！</div>
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+<tr style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_0[1]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
+
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_2_2.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_2[2]["start_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_2_2 %>
+    <%= @hotel_info_2_2["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_2_2["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_2_2["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_2_2["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+<tr style="border-style: none;"><td style="border-style: none;" align="center">↓</td>
+<td style="border-style: none;"><%= @routes_infos_2[2]['duration']['text'] %></td>
+<td style="border-style: none;"></td>
+</tr>
+
+<tr style="border-style: none;">
+<td style="border-style: none;"><img src= "<%= @images_picture_2_3.picture_url %>" width=40 height=40></td>
+<td style="border-style: none;"><% str2= @routes_infos_2[2]["end_address"] %>
+    <% strAry2 = str2.split(",") %>
+    <%= strAry2[0] %>
+</td>
+<td style="border-style: none;"><% if @hotel_info_2_3 %>
+    <%= @hotel_info_2_3["hotelName"] %><br><br>
+    <a href='<%= @hotel_info_2_3["hotelInformationUrl"]%>' target='_blank'>
+    <img src='<%= @hotel_info_2_3["hotelThumbnailUrl"] %>'></a>
+    <%= @hotel_info_2_3["hotelSpecial"]%>*詳しくは画像をクリック！
+    <% else %>近くに宿が見つかりませんでした。
+    <% end %>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</li>
+
+<div class="share">
+  <br>
+  <button class="save_btn" type="button">保存</button>
+  <br>
+  プランをシェアする:
+  <img src="/images/140818_1.png" width="100" height="20">
+</div>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
 </div>
 
 
@@ -573,5 +860,6 @@ src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaU
 <li><a href="/plan/index"><i class="fa fa-jpy"></i> Plan</a></li>
 </ul>
 </div><!--/.nav-collapse -->
+<script src="../js/plan.js"></script>
 </body>
 </html>

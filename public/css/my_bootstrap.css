@@ -100,7 +100,21 @@ border-radius: 0 3px 3px 0;
 .my_page{
     position: absolute;
     right: 10px;
-    top: 30px;
+    top: 10px;
     text-align: center;
-    
 }
+
+.share{
+    margin: 20px;
+    text-align: right;
+}
+
+.logo{
+    /*position: absolute*/
+    left: 20px;
+    top: 20px;
+}
+
+/*.planDetail{*/
+    
+/*}*/

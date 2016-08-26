@@ -2,6 +2,7 @@ class HomeController < ApplicationController
     def index
         #@pictures = Picture.all
         # @pic_pages = Picture.page(params[:page]).per(10)
+        user_id = session[:user_id]
         
         @pictures = Picture.page(params[:page]).per(10)
         
@@ -11,6 +12,7 @@ class HomeController < ApplicationController
 
             pic.behavior_num = format("%02d", behavior_num)
             
+            pic.like = (Behavior.where(user_id: user_id, picture_id: pic.id).count() > 0)
  
             pic.like_image_url = "/picture/"+behavior_num.to_s+".jpg"
 =begin
@@ -31,14 +33,17 @@ class HomeController < ApplicationController
         end
    
         #@pic_pages = pic_pages
-        @user_name = "はまちゃん"
-    
+
     end
          
         
     def more_read
         @pictures = Picture.where("picture_id > #{params[:picture_id]}").limit(10)
-           @pictures.each do |pic|
+            user_id = session[:user_id]
+            @pictures.each do |pic|
+            
+            pic.like = (Behavior.where(user_id: user_id, picture_id: pic.id).count() > 0)
+               
             behavior_num = Behavior.where(picture_id: pic.id).count()
 
             pic.behavior_num = format("%02d", behavior_num)

@@ -21,10 +21,10 @@
 
   <body>
     <div class="container bg-success">
-      <img src="/images/logo.png">
+      <img class="logo" src="/images/logo.png">
       
       <div class="my_page">
-        <%= @user_name %>さん、こんにちは<br>
+        <%= session[:user_name] %>さん、こんにちは<br>
         <a href="./mypage">マイページ</a> | <a href="./logout">ログアウト</a><br><br>
       </div>
       
@@ -42,10 +42,15 @@
         
         <td style="border-style: none;">
           <div id=<%= pic_id %> class="add_pictures <%= pic.size %>" style="margin-right: 10px">
+            
             <img id=<%= pic_id %> class="lazy pic_size" src=<%= url %> width=480 height=360 align="center">
+
+            <% if pic.like  %>
+            <img src="../picture/check.png" class="check" width="60" height="60"/>
+            <% end %>
             <div class="star">
               <img src="/picture/star.png" class="like" width="60" height="60"/>
-              <p class="like_num" align='center'><%= pic.behavior_num %> </p>
+              <p id="star_<%= pic_id %>" class="like_num" align='center'><%= pic.behavior_num %> </p>
             </div>
           </div>
         </td>
@@ -68,6 +73,6 @@
       <li><a href="../plan/index"><i class="fa fa-jpy"></i> Plan</a></li>
       </ul>
     </div><!--/.nav-collapse -->
-    <script src="../js/hamano.js"></script>
+    <script src="../js/home.js"></script>
   </body>
 </html>

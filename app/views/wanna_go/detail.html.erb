@@ -24,11 +24,12 @@
        <% station = @location.station %>
        <% address = @location.address %>
 
-      <img src="/images/logo.png">
+      <img class="logo" src="/images/logo.png">
       <div class="my_page">
-        <%= @user_name %>さん、こんにちは<br>
+        <%= session[:user_name] %>さん、こんにちは<br>
         <a href="./mypage">マイページ</a> | <a href="./logout">ログアウト</a><br><br>
       </div>
+
       <center>
     <h1>
       <%= name %> 
@@ -39,14 +40,13 @@
        <img id=<%= pic_id %> class="lazy" src=<%= url %> width="640" height="480">
        </div>
        </center>
-       <div width:200px; align="center">
-       <font size="+2">
-           <table>
-               <tr>
-                   <td>
-                       <p><%= desc %></p>
-                   </td>
-               </tr>
+      <font size="+2">
+        <table frame="void">
+        <tr>
+        <td>
+        <p><%= desc %></p>
+        </td>
+         </tr>
          <tr>
              <td>
                  <p>Address: <%= address %></p>
@@ -57,15 +57,14 @@
                  <p>Access: <%= station %></p>
              </td>
          </tr>
-         
+         </table>
          </font>
-        </div>
        
       <center><a class"navbar-fixed-bottom" href="../../plan/proposal?pic_id=<%= params[:pic_id] %>" class="btn btn-default btn-lg">プランの提案 </a></center>
       <!-- フッターとしてナビゲーションバーを配置 -->
       <div class="navbar navbar-collapse collapse navbar-fixed-bottom panel-footer">
         <ul class="nav navbar-nav">
-        <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/home"><i class="fa fa-home"></i>Home</a></li>
         <li><a href="/wannago/top"><i class="fa fa-info"></i> WannaGo</a></li>
         <li><a href="/plan/index"><i class="fa fa-jpy"></i> Plan</a></li>
         </ul>

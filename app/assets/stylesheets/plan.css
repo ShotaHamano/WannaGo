@@ -2,3 +2,8 @@
     margin-bottom: 61px;
    
 }
+
+table.routetable {
+    border-style: none;    
+    border: none;
+}

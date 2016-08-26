@@ -4,6 +4,7 @@ end
 class PlanController < ApplicationController
   def index
     # @plans = Plan.find(user_id: 1)
+    @user_name = "はまちゃん"
   end
     
   def proposal

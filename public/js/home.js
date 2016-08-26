@@ -6,8 +6,8 @@ $(function(){
 
 
 function eventRegister(){
-$('.lazy').click(function(){
-    $(this).css('opacity', '0.5');
+  $('.lazy').click(function(){
+    // $(this).css('opacity', '0.5');
     // var position = $(this).position();
     var id = this.id;
     $('#'+id).append('<img src="../picture/check.png" class="check" width="60" height="60"/>')
@@ -25,7 +25,11 @@ $('.lazy').click(function(){
           'picture_id': this.id
         }
       }
+    ).success(function(data){
+      $('#star_'+id).html(data)
+    }
     );
+
 });
   
 }
@@ -60,3 +64,4 @@ $('.more_read').click(function(){
     
 
 });
+
