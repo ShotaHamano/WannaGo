@@ -1,0 +1,67 @@
+<!-- はまの画面 -->
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>サンプル</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/my_bootstrap.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="../node_modules/jquery/dist/jquery.min.js"></script>-->
+    <!-- BootstrapのJS読み込み -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/jquery-lazyload/jquery.lazyload.js"></script>
+  </head>
+
+
+
+  <body>
+    <div class="container bg-success">
+      <img src="/images/logo.png">
+      <% num = 0 %>
+
+      <table class="add_pic_tr">
+      <% @pictures.each do |pic| %>
+        <% num += 1 %> 
+        <% url = pic.picture_url %>
+        <% pic_id = pic.picture_id %>
+
+        <% if num % 2 == 1 %>
+          <tr >
+        <% end %>
+        
+        <td style="border-style: none;">
+          <div id=<%= pic_id %> class="add_pictures <%= pic.size %>" style="margin-right: 10px">
+            <img id=<%= pic_id %> class="lazy pic_size" src=<%= url %> width=480 height=360 align="center">
+            <div class="star">
+              <img src="/picture/star.png" class="like" width="60" height="60"/>
+              <p class="like_num" align='center'><%= pic.behavior_num %> </p>
+            </div>
+          </div>
+        </td>
+
+        <% if num % 2 == 0 %>
+          </tr>
+        <% end %>
+
+      <% end %>
+    </table>
+      <!-- ページネーション -->
+     <button type="button" class="btn btn-primary btn-lg btn-block more_read">もっと見る</button>
+
+      </div>
+    <!-- フッターとしてナビゲーションバーを配置 -->
+    <div class="navbar navbar-collapse collapse navbar-fixed-bottom panel-footer">
+      <ul class="nav navbar-nav">
+      <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="../wannago/top"><i class="fa fa-info"></i> WannaGo</a></li>
+      <li><a href="../plan/index"><i class="fa fa-jpy"></i> Plan</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+    <script src="../js/hamano.js"></script>
+  </body>
+</html>

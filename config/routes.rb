@@ -53,4 +53,20 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  get 'home' => 'home#index'
+  get 'wannago/top' => 'wanna_go#top'
+  get 'plan/index' => 'plan#index'
+  get 'plan/proposal' => 'plan#proposal'
+  get 'wannago/register' => 'wanna_go#register'
+  get 'wannago/detail/:pic_id' => 'wanna_go#detail'
+  get 'home/more_read' => 'home#more_read'
+  
+  
+  
+  ## TEST purpose
+  get 'ajax/index' => 'ajax#index' 
+  get 'ajax/register' => 'ajax#register' 
+  get 'hamano/index' => 'hamano#index'
+  get 'hamano/more_read' => 'hamano#more_read'
 end

@@ -1,0 +1,7 @@
+   <% @pictures.each do |pic| %>
+   <% url = pic.picture_url %>
+   <% pic_id = pic.picture_id %>
+   <div id=<%= pic_id %> class="add_pictures">
+   <img id=<%= pic_id %> class="lazy" src=<%= url %> width="640" height="480">
+   </div>
+   <% end %> 

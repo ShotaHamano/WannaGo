@@ -1,0 +1,25 @@
+      <% num = 0 %>
+      <% @pictures.each do |pic| %>
+        <% num += 1 %> 
+        <% url = pic.picture_url %>
+        <% pic_id = pic.picture_id %>
+
+        <% if num % 2 == 1 %>
+          <tr>
+        <% end %>
+        
+        <td style="border-style: none;">
+          <div id=<%= pic_id %> class="add_pictures"style="margin-right: 10px">
+            <img id=<%= pic_id %> class="lazy pic_size" src=<%= url %> width=480 height=360 align="center">
+            <div class="star">
+              <img src="/picture/star.png" class="like" width="60" height="60"/>
+              <p class="like_num" align='center'><%= pic.behavior_num %> </p>
+            </div>
+          </div>
+        </td>
+
+        <% if num % 2 == 0 %>
+          </tr>
+        <% end %>
+
+      <% end %>

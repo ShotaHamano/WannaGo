@@ -1,0 +1,19 @@
+(title VARCHAR(512),           -- タイトル
+ id VARCHAR(100),              -- 写真ID
+ description MEDIUMTEXT,       -- 説明
+ comments LONGTEXT,            -- コメント
+ owner VARCHAR(100),           -- 投稿者ID(撮影者)
+ date_taken VARCHAR(100),      -- 撮影日
+ latitude FLOAT,               -- 緯度
+ longitude FLOAT,              -- 経度
+ tags LONGTEXT,                -- タグ
+ machine_tags LONGTEXT,        -- マシーンタグ
+ url VARCHAR(100),             -- 画像のURL
+ place_id VARCHAR(100),        -- 場所のID
+ lastupdate VARCHAR(100),      -- 最終更新日
+ woeid VARCHAR(100),           -- WOEID情報
+ views VARCHAR(100),           -- 閲覧数
+ secret VARCHAR(100),          -- secret情報
+ ownername VARCHAR(100),       -- 投稿者のユーザ名
+ date_upload VARCHAR(100)      -- アップロード日
+);

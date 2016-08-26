@@ -1,0 +1,20 @@
+.bg-success {
+    margin-bottom: 61px;
+}
+
+table {
+ margin-left: 100px;
+ margin-right: 100px;
+ border-collapse: collapse;
+ margin-bottom: 10px;
+}
+
+td {
+  font-size: 120%;
+  border: solid 1px;
+  padding: 0.5em;
+}
+
+img {
+    margin-bottom: 10px;
+}

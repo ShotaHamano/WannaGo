@@ -1,0 +1,581 @@
+<!--プラン一覧画面-->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>サンプル</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/my_bootstrap.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/jquery-lazyload/jquery.lazyload.js"></script>
+  </head>
+
+  <body>
+
+<div class="container bg-success">  <!-- 大きな枠 -->
+<img src="/images/logo.png">
+<div class="my_page">
+  <%= @user_name %>さん、こんにちは<br>
+  <a href="./mypage">マイページ</a> | <a href="./logout">ログアウト</a><br><br>
+</div>
+<h1>プラン一覧</h1>
+
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <!-- 
+      data-toggle : Collapseを起動させる
+      data-parent : アコーディオン風に閉じたり開いたりするためのもの
+      href : 指定した場所のパネルを開く
+    -->
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+          札幌と小樽観光パック
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+<span class="label"><h3><FONT color="black">札幌と小樽観光パック</FRONT></h3></span>
+</div>
+
+<iframe
+class="center"
+width="450"
+height="450"
+frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaUtUuS43HjNmhnjsW8 &origin=
+<% str2= @routes_infos[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&destination=<% str2= @routes_infos[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&waypoints=  
+<% str2= @routes_infos[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+|
+<% str2= @routes_infos[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+<br>
+
+<div class="planDetail">
+<div class="routeDetail">
+
+
+<div  class="container">
+<table class="table">
+<thead>
+<tr>
+<th>順番</th>
+<th>観光地</th>
+<th>次の目的地までの所要時間</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+
+<% str2= @routes_infos[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+</td>
+<td>
+
+<%= @routes_infos[0]['duration']['text'] %>
+
+
+</td>
+
+</tr>
+<tr>
+<td>2</td>
+<td>
+
+<% str2= @routes_infos[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+
+</td>
+<td><%= @routes_infos[1]['duration']['text'] %></td>
+
+</tr>
+<tr>
+<td>3</td>
+<td>
+
+<% str2= @routes_infos[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+</td>
+<td><%= @routes_infos[2]['duration']['text'] %></td>
+
+</tr>
+<tr>
+<td>4</td>
+<td>
+
+<% str2= @routes_infos[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+</td>
+<td></td>
+
+</tr>
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+</div>
+<div class="hotel">
+<h3>オススメの宿！</h3>
+
+<ul>
+<li>
+<img src= "/images/bnr_ogp_logo.png"  width="25" height="25">
+
+<%= @hotel_info["hotelName"] %>
+<br><br>
+<a href='<%= @hotel_info["hotelInformationUrl"]%>' target='_blank'>
+<img src='<%= @hotel_info["hotelThumbnailUrl"] %>'>
+</a>
+
+
+<%=  @hotel_info["hotelSpecial"]%>
+*詳しくは画像をクリック！
+<br>
+<br>
+Access:<%=  @hotel_info["access"]%>
+
+</li><br>
+プランをシェアする:
+<img src="/images/140818_1.png" width="100" height="20">
+
+</ul>
+
+</div>
+</div>
+
+
+   
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+          札幌〜函館満喫ツアー
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+ <span class="label"><h3><FONT color="black">札幌〜函館満喫ツアー</FRONT></h3></span>
+</div>
+
+<iframe
+class="center"
+width="450"
+height="450"
+frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaUtUuS43HjNmhnjsW8 &origin=
+<% str2= @routes_infos[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&destination=<% str2= @routes_infos[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&waypoints=  
+<% str2= @routes_infos[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+|
+<% str2= @routes_infos[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+<br>
+
+<div class="planDetail">
+<div class="routeDetail">
+
+
+<div  class="container">
+<center>
+<table class="table">
+<thead>
+<tr>
+<th>順番</th>
+<th>観光地</th>
+<th>次の目的地までの所要時間</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+
+<% str2= @routes_infos[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+</td>
+<td>
+
+<%= @routes_infos[0]['duration']['text'] %>
+
+
+</td>
+
+</tr>
+<tr>
+<td>2</td>
+<td>
+
+<% str2= @routes_infos[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+
+</td>
+<td><%= @routes_infos[1]['duration']['text'] %></td>
+
+</tr>
+<tr>
+<td>3</td>
+<td>
+
+<% str2= @routes_infos[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+</td>
+<td><%= @routes_infos[2]['duration']['text'] %></td>
+
+</tr>
+<tr>
+<td>4</td>
+<td>
+
+<% str2= @routes_infos[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+</td>
+<td></td>
+
+</tr>
+
+</tbody>
+</table>
+</center>
+</div>
+</div>
+
+</div>
+<div class="hotel">
+<h3>オススメの宿！</h3>
+
+<ul>
+<li>
+<img src= "/images/bnr_ogp_logo.png"  width="25" height="25">
+
+<%= @hotel_info["hotelName"] %>
+<br><br>
+<a href='<%= @hotel_info["hotelInformationUrl"]%>' target='_blank'>
+<img src='<%= @hotel_info["hotelThumbnailUrl"] %>'>
+</a>
+
+
+<%=  @hotel_info["hotelSpecial"]%>
+*詳しくは画像をクリック！
+<br>
+<br>
+Access:<%=  @hotel_info["access"]%>
+
+</li>
+
+</ul>
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+          沖縄で踊る！ツアー
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+     <span class="label"><h3><FONT color="black">沖縄で踊る！ツアー</FRONT></h3></span>
+</div>
+
+<iframe
+class="center"
+width="450"
+height="450"
+frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWrcsqqwueBdadoaUtUuS43HjNmhnjsW8 &origin=
+<% str2= @routes_infos[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&destination=<% str2= @routes_infos[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&waypoints=  
+<% str2= @routes_infos[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+|
+<% str2= @routes_infos[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+<br>
+
+<div class="planDetail">
+<div class="routeDetail">
+
+
+<div  class="container">
+<table class="table">
+<thead>
+<tr>
+<th>順番</th>
+<th>観光地</th>
+<th>次の目的地までの所要時間</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+
+<% str2= @routes_infos[0]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+</td>
+<td>
+
+<%= @routes_infos[0]['duration']['text'] %>
+
+
+</td>
+
+</tr>
+<tr>
+<td>2</td>
+<td>
+
+<% str2= @routes_infos[1]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+
+</td>
+<td><%= @routes_infos[1]['duration']['text'] %></td>
+
+</tr>
+<tr>
+<td>3</td>
+<td>
+
+<% str2= @routes_infos[2]["start_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+</td>
+<td><%= @routes_infos[2]['duration']['text'] %></td>
+
+</tr>
+<tr>
+<td>4</td>
+<td>
+
+<% str2= @routes_infos[2]["end_address"] %>
+<% strAry2 = str2.split(",") %>
+<%= strAry2[0] %>
+
+
+</td>
+<td></td>
+
+</tr>
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+</div>
+<div class="hotel">
+<h3>オススメの宿！</h3>
+
+<ul>
+<li>
+<img src= "/images/bnr_ogp_logo.png"  width="25" height="25">
+
+<%= @hotel_info["hotelName"] %>
+<br><br>
+<a href='<%= @hotel_info["hotelInformationUrl"]%>' target='_blank'>
+<img src='<%= @hotel_info["hotelThumbnailUrl"] %>'>
+</a>
+
+
+<%=  @hotel_info["hotelSpecial"]%>
+*詳しくは画像をクリック！
+<br>
+<br>
+Access:<%=  @hotel_info["access"]%>
+
+</li>
+
+</ul>
+      </div>
+    </div>
+    
+    </div>
+  
+   <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+        大都市で遊ぼう〜東京の旅〜
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+          京都お寺ツアー
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+</div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+         スキューバダイビングin沖縄
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+          日本横断チャレンジ
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      <h4 class="panel-title">
+          うどん食い倒れ香川
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          東北旅行
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  
+   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          函館で絶景スポットをめぐる！
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+    
+    <!-- フッターとしてナビゲーションバーを配置 -->
+    <div class="navbar navbar-collapse collapse navbar-fixed-bottom panel-footer">
+      <ul class="nav navbar-nav">
+      <li><a href="../home"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="../wannago/top"><i class="fa fa-info"></i> WannaGo</a></li>
+      <li><a href="index.html"><i class="fa fa-jpy"></i> Plan</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </body>
+</html>

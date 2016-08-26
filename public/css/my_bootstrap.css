@@ -1,0 +1,106 @@
+.navbar .navbar-inner {
+padding: 0;
+}
+
+.navbar .nav {
+margin: 0;
+display: table;
+width: 100%;
+}
+
+.navbar .nav li {
+display: table-cell;
+float: none;
+}
+
+.navbar .nav li a {
+font-weight: bold;
+text-align: center;
+border-left: 1px solid rgba(255, 255, 255, .75);
+border-right: 1px solid rgba(0, 0, 0, .1);
+color: #777;
+}
+
+.navbar .nav li:last-child a {
+border-right: 0;
+border-radius: 0 3px 3px 0;
+}
+
+.ready {
+    opacity: 0;
+}
+.loaded {
+  opacity: 1;
+    -webkit-transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 10ms;
+    -moz-transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 10ms;
+    -o-transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 10ms;
+    transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 10ms;
+}
+
+.like{
+ position: absolute;
+ top: 5%;
+ left: 5%;  
+}
+
+/*.like p{*/
+/* position: absolute;*/
+/* top: 5%;*/
+/* left: 50%;  */
+/* font-size: 20px;*/
+/*}*/
+
+.like_num{
+ position: absolute;
+ top: 10%;
+ left: 8.7%;
+ font-size: 20px;
+ display:inline-block;
+ vertical-align:middle;
+}
+
+
+.check {
+ position: absolute;
+ top: 5%;
+ right: 5%;
+}
+.add_pictures{
+  position: relative;
+  width: 480px;
+}
+
+/*.pic_size{*/
+/*    position: relative;*/
+/*  width: 100%;*/
+/*}*/
+/*.check_num{*/
+/* position: absolute;*/
+/* top: 5%;*/
+/* right: 5%;*/
+/* font-size: 30px;*/
+/*}*/
+
+/*.s_pic{*/
+/*    position: relative;*/
+/*    width: 360;*/
+/*    height: 270;*/
+/*}*/
+/*.m_pic{*/
+/*    position: relative;*/
+/*    width: 480;*/
+/*    height: 360;*/
+/*}*/
+/*.l_pic{*/
+/*    position: relative;*/
+/*    width: 640;*/
+/*    height: 480;*/
+/*}*/
+
+.my_page{
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    text-align: center;
+    
+}

@@ -1,0 +1,51 @@
+<!--wannago トップ画面-->
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>サンプル</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/my_bootstrap.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/jquery-lazyload/jquery.lazyload.js"></script>
+  </head>
+
+  <body>
+    <div class="container bg-success">
+    <img src="/images/logo.png">
+    <h5>あなたが行きたい場所たち♬♬︎</h5>
+    
+    <div class="my_page">
+        <%= @user_name %>さん、こんにちは<br>
+        <a href="./mypage">マイページ</a> | <a href="./logout">ログアウト</a><br><br>
+    </div>
+    <!-- 画像を配置 -->
+    <% @wannagos.each do |pic| %>
+    <% url = pic.picture.picture_url %>
+    <% pic_id = pic.picture.picture_id %>
+    <center><a href = "./detail/<%= pic_id %>"><img id=<%= pic_id %>class="lazy" src=<%= url %> width="640" height="480"></a></center>
+    <% end %> 
+    
+    <script>
+      $(function(){
+        $("img.lazy").lazyload();
+      });
+    </script>
+
+    <!-- フッターとしてナビゲーションバーを配置 -->
+    <div class="navbar navbar-collapse collapse navbar-fixed-bottom panel-footer">
+      <ul class="nav navbar-nav">
+        <li><a href="../home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/wannago/top"><i class="fa fa-info"></i> WannaGo</a></li>
+        <li><a href="../plan/index"><i class="fa fa-jpy"></i> Plan</a></li>
+        </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </body>
+</html>

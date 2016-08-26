@@ -1,0 +1,2 @@
+module WannaGoHelper
+end
